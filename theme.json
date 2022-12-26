@@ -1,9 +1,115 @@
 {
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "principale",
+					"color": "#404040",
+					"name": "Principale"
+				},
+				{
+					"slug": "secondaire",
+					"color": "#767676",
+					"name": "Secondaire"
+				},
+				{
+					"slug": "tertiaire",
+					"color": "#ffffff",
+					"name": "Tertiaire"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Noto Serif",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/noto-serif/NotoSerif-Regular.ttf"
+							]
+						},
+						{
+							"fontFamily": "Noto Serif",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/noto-serif/NotoSerif-Italic.ttf"
+							]
+						},
+						{
+							"fontFamily": "Noto Serif",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/noto-serif/NotoSerif-Bold.ttf"
+							]
+						},
+						{
+							"fontFamily": "Noto Serif",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/noto-serif/NotoSerif-BoldItalic.ttf"
+							]
+						}
+					],
+					"fontFamily": "\"Noto Serif\",sans-serif",
+					"name": "Noto Serif",
+					"slug": "noto-serif"
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "ultra-petite",
+					"size": "0.857142857rem",
+					"name": "Ultra petite"
+				},
+				{
+					"slug": "petite",
+					"size": "0.875rem",
+					"name": "Petite"
+				},
+				{
+					"slug": "moyenne",
+					"size": "1rem",
+					"name": "Moyenne"
+				},
+				{
+					"slug": "grande",
+					"size": "1.5rem",
+					"name": "Grande"
+				},
+				{
+					"slug": "ultra-grande",
+					"size": "2.25rem",
+					"name": "Ultra grande"
+				}
+			],
+			"lineHeight": true
+		},
 		"layout": {
 			"contentSize": "840px",
 			"wideSize": "1100px"
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--tertiaire)",
+			"text": "var(--wp--preset--color--principale)"
+		},
+		"typography": {
+			"fontSize": "var(--wp--preset--font-size--moyenne)",
+			"fontFamily": "var(--wp--preset--font-family--noto-serif)",
+			"lineHeight": "1.5"
 		}
 	}
 }
