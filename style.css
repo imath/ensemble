@@ -10,3 +10,30 @@ License: GNU General Public License v2 or later
 License URI: /LICENSE
 Text Domain: ensemble
 */
+
+.wp-site-blocks > main {
+	padding-top: 0.5em;
+}
+
+.navigation-top {
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+	position: relative;
+}
+
+.navigation-top nav ul a {
+	display: block;
+	padding: 0.5em 0;
+	text-decoration: none;
+}
+
+.navigation-top nav ul > li > a {
+	padding: 1em 1.25em;
+}
+
+.site-footer {
+	margin-top: 2.5em;
+	padding-bottom: 1.5em;
+	border-top: solid 1px #eee;
+}
