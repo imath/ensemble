@@ -18,6 +18,26 @@
 					"slug": "tertiaire",
 					"color": "#ffffff",
 					"name": "Tertiaire"
+				},
+				{
+					"slug": "bleu-tres-fonce",
+					"color": "#23282d",
+					"name": "Bleu très foncé"
+				},
+				{
+					"slug": "gris-tres-leger",
+					"color": "#eeeeee",
+					"name": "Gris très léger"
+				},
+				{
+					"slug": "gris-tres-fonce",
+					"color": "#444444",
+					"name": "Gris très foncé"
+				},
+				{
+					"slug": "cyan-tres-fonce",
+					"color": "#044f51",
+					"name": "Cyan très foncé"
 				}
 			]
 		},
@@ -89,6 +109,11 @@
 					"name": "Grande"
 				},
 				{
+					"slug": "tres-grande",
+					"size": "2rem",
+					"name": "Très grande"
+				},
+				{
 					"slug": "ultra-grande",
 					"size": "2.25rem",
 					"name": "Ultra grande"
@@ -96,9 +121,15 @@
 			],
 			"lineHeight": true
 		},
+		"useRootPaddingAwareAlignments": true,
 		"layout": {
 			"contentSize": "840px",
 			"wideSize": "1100px"
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
 		}
 	},
 	"styles": {
@@ -110,6 +141,64 @@
 			"fontSize": "var(--wp--preset--font-size--moyenne)",
 			"fontFamily": "var(--wp--preset--font-family--noto-serif)",
 			"lineHeight": "1.5"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontWeight": "700"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--ultra-grande)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--grande)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--petite)"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--bleu-tres-fonce)"
+				},
+				"typography": {
+					"textDecoration": "underline"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--secondaire)"
+					}
+				}
+			},
+			"button": {
+				"typography": {
+					"fontWeight": "700",
+					"fontSize": "1.2rem"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--bleu-tres-fonce)",
+					"text": "#ffffff"
+				},
+				":hover": {
+					"color": {
+						"background": "#ffffff",
+						"text": "var(--wp--preset--color--bleu-tres-fonce)"
+					}
+				},
+				"border": {
+					"radius": "0",
+					"width": "1px",
+					"style": "solid",
+					"color": "var(--wp--preset--color--bleu-tres-fonce)"
+				},
+				"shadow": "0 1px 2px rgba(64, 64, 64, 0.1)"
+			}
 		}
 	}
 }
