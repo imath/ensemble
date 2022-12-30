@@ -19,8 +19,9 @@
 			esc_url( get_bloginfo( 'rss2_url' ) )
 		);
 		?>
-		<!-- wp:social-link {"url":"https://twitter.com/imath","service":"twitter"} /-->
-		<!-- wp:social-link {"url":"https://github.com/imath","service":"github"} /-->
+		<!-- wp:social-link {"url":"https://profiles.wordpress.org/imath/","service":"wordpress"} /-->
+		<!-- wp:social-link {"url":"https://github.com/imath/","service":"github"} /-->
+		<!-- wp:social-link {"url":"https://twitter.com/imath/","service":"twitter"} /-->
 		</ul>
 		<!-- /wp:social-links -->
 		<p class="has-text-align-right">

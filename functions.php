@@ -17,6 +17,9 @@ if ( ! function_exists( 'ensemble_setup' ) ) {
 	 */
 	function ensemble_setup() {
 		add_theme_support( 'wp-block-styles' );
+
+		// Use specific thumbnail size.
+		set_post_thumbnail_size( 800, 400, true );
 	}
 }
 add_action( 'after_setup_theme', 'ensemble_setup' );
