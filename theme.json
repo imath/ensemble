@@ -208,6 +208,11 @@
 			"title": "Entête de page"
 		},
 		{
+			"area": "uncategorized",
+			"name": "comments",
+			"title": "Commentaires"
+		},
+		{
 			"area": "footer",
 			"name": "footer",
 			"title": "Pied de page"
