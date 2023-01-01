@@ -37,3 +37,8 @@ Text Domain: ensemble
 	padding-bottom: 1.5em;
 	border-top: solid 1px #eee;
 }
+
+.entry-header .is-layout-flex,
+.entry-footer .is-layout-flex {
+	gap: 5px;
+}
