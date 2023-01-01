@@ -11,6 +11,21 @@ License URI: /LICENSE
 Text Domain: ensemble
 */
 
+.site-header .search-form-container {
+	margin-left: auto;
+}
+
+.site-header .search-form-container .wp-block-search__input {
+	font-size: var(--wp--preset--font-size--petite);
+}
+
+.site-header .search-form-container .wp-block-search__button {
+	background-color: initial;
+	color: var(--wp--preset--color--bleu-tres-fonce);
+	border-width: 0;
+	padding: 0;
+}
+
 .wp-site-blocks > main {
 	padding-top: 0.5em;
 }
