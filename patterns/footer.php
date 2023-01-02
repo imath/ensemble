@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Footer Ensemble
- * Slug: ensemble/footer-ensemble
+ * Slug: ensemble/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  * Inserter: no

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: 404 Ensemble
- * Slug: ensemble/404-ensemble
+ * Slug: ensemble/404
  * Categories: uncategorized
  * Inserter: no
  */

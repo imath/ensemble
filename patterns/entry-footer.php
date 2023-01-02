@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Entry Footer Ensemble
- * Slug: ensemble/entry-footer-ensemble
+ * Slug: ensemble/entry-footer
  * Categories: uncategorized
  * Inserter: no
  */

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Entry Header Ensemble
- * Slug: ensemble/entry-header-ensemble
+ * Slug: ensemble/entry-header
  * Categories: uncategorized
  * Inserter: no
  */
