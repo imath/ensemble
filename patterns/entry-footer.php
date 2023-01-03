@@ -2,8 +2,11 @@
 /**
  * Title: Entry Footer Ensemble
  * Slug: ensemble/entry-footer
- * Categories: uncategorized
  * Inserter: no
+ *
+ * @package /ensemble/patterns
+ *
+ * @since 1.0.0
  */
 ?>
 <!-- wp:group {"layout":{"type":"flex"}} -->

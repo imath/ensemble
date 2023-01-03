@@ -2,8 +2,11 @@
 /**
  * Title: Site Header search
  * Slug: ensemble/site-header-search
- * Categories: header
  * Inserter: no
+ *
+ * @package /ensemble/patterns
+ *
+ * @since 1.0.0
  */
 ?>
 <!-- wp:group {"layout":{"inherit":true},"className":"search-form-container"} -->

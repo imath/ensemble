@@ -57,6 +57,10 @@ Text Domain: ensemble
 	text-decoration: none;
 }
 
+.navigation-top nav ul a:hover {
+	color: var(--wp--preset--color--secondaire);
+}
+
 .navigation-top nav ul > li > a {
 	padding: 1em 1.25em;
 }

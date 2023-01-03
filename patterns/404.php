@@ -2,8 +2,11 @@
 /**
  * Title: 404 Ensemble
  * Slug: ensemble/404
- * Categories: uncategorized
  * Inserter: no
+ *
+ * @package /ensemble/patterns
+ *
+ * @since 1.0.0
  */
 ?>
 <!-- wp:group {"layout":{"inherit":true}} -->

@@ -2,9 +2,11 @@
 /**
  * Title: Footer Ensemble
  * Slug: ensemble/footer
- * Categories: footer
- * Block Types: core/template-part/footer
  * Inserter: no
+ *
+ * @package /ensemble/patterns
+ *
+ * @since 1.0.0
  */
 ?>
 <!-- wp:group {"layout":{"inherit":true}} -->
