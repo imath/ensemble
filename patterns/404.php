@@ -32,10 +32,6 @@
 	<h2 class="wp-block-post-title has-text-align-center"><?php esc_html_e( 'Ouch, vous voici dans une impasse !', 'ensemble' ); ?></h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"align":"center"} -->
-	<p class="has-text-align-center"><?php echo esc_html_x( 'Le site n’a pas trouvé ce que vous recherchez. Merci d’utiliser le formulaire de recherche ci-dessous.', 'Message to convey that a webpage could not be found', 'ensemble' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:search {"label":"<?php echo esc_html_x( 'Rechercher', 'label', 'ensemble' ); ?>","placeholder":"<?php echo esc_attr_x( 'Texte recherché...', 'placeholder for search field', 'ensemble' ); ?>","showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php esc_attr_e( 'Ok', 'ensemble' ); ?>","buttonUseIcon":true,"align":"center"} /-->
+	<!-- wp:pattern {"slug":"ensemble/search-form"} /-->
 </div>
 <!-- /wp:group -->
