@@ -40,10 +40,6 @@ Text Domain: ensemble
 	padding: 0;
 }
 
-.wp-site-blocks > main {
-	padding-top: 0.5em;
-}
-
 .navigation-top {
 	background: #fff;
 	border-bottom: 1px solid #eee;
@@ -63,6 +59,14 @@ Text Domain: ensemble
 
 .navigation-top nav ul > li > a {
 	padding: 1em 1.25em;
+}
+
+.wp-site-blocks > main {
+	padding-top: 0.5em;
+}
+
+main .archive-header {
+	border-bottom: solid 1px var(--wp--preset--color--bleu-tres-fonce);
 }
 
 .site-footer {
