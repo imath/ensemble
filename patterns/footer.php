@@ -24,6 +24,12 @@
 		<!-- wp:social-link {"url":"https://profiles.wordpress.org/imath/","service":"wordpress"} /-->
 		<!-- wp:social-link {"url":"https://github.com/imath/","service":"github"} /-->
 		<!-- wp:social-link {"url":"https://twitter.com/imath/","service":"twitter"} /-->
+		<li class="wp-social-link wp-social-link-paypal wp-block-social-link">
+			<a href="https://www.paypal.me/imath/" class="wp-block-social-link-anchor">
+				<?php echo file_get_contents( get_template_directory_uri() . '/assets/images/paypal.svg' ); ?>
+				<span class="wp-block-social-link-label screen-reader-text">Paypal</span>
+			</a>
+		</li>
 		</ul>
 		<!-- /wp:social-links -->
 		<p class="has-text-align-right">
