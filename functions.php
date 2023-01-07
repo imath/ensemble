@@ -20,6 +20,9 @@ if ( ! function_exists( 'ensemble_setup' ) ) {
 
 		// Use specific thumbnail size.
 		set_post_thumbnail_size( 800, 400, true );
+
+		// Enqueue editor styles.
+		add_editor_style( 'style.css' );
 	}
 }
 add_action( 'after_setup_theme', 'ensemble_setup' );
