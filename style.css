@@ -61,8 +61,12 @@ Text Domain: ensemble
 	padding: 1em 1.25em;
 }
 
-.wp-site-blocks > main {
+body:not(.home) .wp-site-blocks > main {
 	padding-top: 0.5em;
+}
+
+body.home .wp-site-blocks > main {
+	margin-block-start: 0;
 }
 
 main .archive-header {
