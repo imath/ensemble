@@ -31,7 +31,9 @@
 	<!-- wp:heading {"level":1,"textAlign":"center","className":"wp-block-post-title"} -->
 	<h2 class="wp-block-post-title has-text-align-center"><?php esc_html_e( 'Ouch, vous voici dans une impasse !', 'ensemble' ); ?></h2>
 	<!-- /wp:heading -->
-
+	<!-- wp:paragraph -->
+	<p><?php echo esc_html_x( 'Le site n’a pas trouvé ce que vous recherchez. Utilisez le formulaire ci-dessous pour réssayer avec un texte différent.', 'Message to convey that a webpage could not be found', 'ensemble' ); ?></p>
+	<!-- /wp:paragraph -->
 	<!-- wp:pattern {"slug":"ensemble/search-form"} /-->
 </div>
 <!-- /wp:group -->
