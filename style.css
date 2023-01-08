@@ -61,6 +61,13 @@ Text Domain: ensemble
 	padding: 1em 1.25em;
 }
 
+@media screen and (min-width: 37.5em) {
+	.navigation-top ul.wp-block-navigation__container > li.current-menu-item > a,
+	.navigation-top ul.wp-block-navigation__container > li.current-menu-parent > a {
+		box-shadow: inset 0 -1px 0 var(--wp--preset--color--bleu-tres-fonce);
+	}
+}
+
 body:not(.home) .wp-site-blocks > main {
 	padding-top: 0.5em;
 }
