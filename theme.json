@@ -204,7 +204,7 @@
 	"customTemplates": [
 		{
 			"name": "search-page",
-			"title": "Search page",
+			"title": "Page de recherche",
 			"postTypes": ["page"]
 		}
 	],

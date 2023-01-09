@@ -28,7 +28,7 @@
 	</figure>
 	<!-- /wp:image -->
 
-	<!-- wp:heading {"level":1,"textAlign":"center","className":"wp-block-post-title"} -->
+	<!-- wp:heading {"level":2,"textAlign":"center","className":"wp-block-post-title"} -->
 	<h2 class="wp-block-post-title has-text-align-center"><?php esc_html_e( 'Ouch, vous voici dans une impasse !', 'ensemble' ); ?></h2>
 	<!-- /wp:heading -->
 	<!-- wp:paragraph -->
