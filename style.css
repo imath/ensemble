@@ -91,6 +91,11 @@ main .archive-header {
 	border-bottom: solid 1px var(--wp--preset--color--bleu-tres-fonce);
 }
 
+.wp-block-ensemble-image-a-la-une .wp-element-caption {
+	text-align: center;
+	font-size: var(--wp--preset--font-size--ultra-petite);
+}
+
 .site-footer {
 	margin-top: 2.5em;
 	padding-bottom: 1.5em;
