@@ -132,6 +132,8 @@ add_action( 'init', 'ensemble_register_block_image_a_la_une' );
  * @todo Check why the `wp:post-content` block does not include an attribute to
  *       customize the post content's more link.
  *
+ * @see https://github.com/WordPress/gutenberg/issues/47046
+ *
  * @since 1.0.0
  *
  * @return string The customized post content's more link.
