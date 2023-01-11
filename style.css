@@ -87,13 +87,22 @@ body.home .wp-site-blocks > main {
 	margin-block-start: 0;
 }
 
-main .archive-header {
+main .archive-header,
+main .search-header {
 	border-bottom: solid 1px var(--wp--preset--color--bleu-tres-fonce);
 }
 
 .wp-block-ensemble-image-a-la-une .wp-element-caption {
 	text-align: center;
 	font-size: var(--wp--preset--font-size--ultra-petite);
+}
+
+.entry-content .ensemble-more-link {
+	margin-block-end: var(--wp--style--block-gap);
+}
+
+.entry-content .ensemble-more-link a.more-link {
+	text-underline-position: under;
 }
 
 .site-footer {

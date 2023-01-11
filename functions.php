@@ -125,3 +125,35 @@ function ensemble_register_block_image_a_la_une() {
 	);
 }
 add_action( 'init', 'ensemble_register_block_image_a_la_une' );
+
+/**
+ * Workaround to customize the post content's more link.
+ *
+ * @todo Check why the `wp:post-content` block does not include an attribute to
+ *       customize the post content's more link.
+ *
+ * @since 1.0.0
+ *
+ * @return string The customized post content's more link.
+ */
+function ensemble_content_more_link() {
+	return sprintf(
+		'<p class="ensemble-more-link">
+			<a href="%1$s" class="more-link">%2$s &rarr;</a>
+		</p>',
+		esc_url( get_the_permalink() ),
+		sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Poursuivre la lecture<span class="screen-reader-text"> de "%s"</span>', 'ensemble' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			esc_html( get_the_title() )
+		)
+	);
+}
+add_filter( 'the_content_more_link', 'ensemble_content_more_link', 10, 0 );

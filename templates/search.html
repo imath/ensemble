@@ -1,16 +1,41 @@
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 <!-- wp:group {"tagName":"main","layout":{"inherit":true}} -->
 <main class="wp-block-group">
-	<!-- wp:query-title {"type":"search","showSearchTerm":true,"level":2} /-->
+	<!-- wp:group {"tagName":"section","className":"search-header alignfull","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|60"},"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"inherit":true}} -->
+	<section class="wp-block-group search-header alignfull" style="margin-bottom:var(--wp--preset--spacing--60);padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--60);">
+		<!-- wp:group {"tagName":"div","layout":{"inherit":true}} -->
+		<div class="wp-block-group">
+		<!-- wp:query-title {"type":"search","showSearchTerm":true,"level":2} /-->
+		</div>
+		<!-- /wp:group -->
+	</section>
+	<!-- /wp:group -->
 	<!-- wp:query -->
 	<div class="wp-block-query">
 		<!-- wp:post-template -->
-			<!-- wp:post-featured-image /-->
-			<!-- wp:post-title {"isLink":true,"level":3} /-->
-			<!-- wp:post-author {"showAvatar":true} /-->
-			<!-- wp:post-date /-->
-			<!-- wp:post-terms {"term":"category"} /-->
-			<!-- wp:post-excerpt /-->
+			<!-- wp:group {"tagName":"section","className":"entry-header","layout":{"inherit":true}} -->
+			<section class="wp-block-group entry-header">
+				<!-- wp:post-title {"isLink":true,"level":3} /-->
+				<!-- wp:pattern {"slug":"ensemble/entry-header"} /-->
+				<!-- wp:post-featured-image {"isLink":true} /-->
+			</section>
+			<!-- /wp:group -->
+			<!-- wp:group {"tagName":"section","className":"entry-excerpt","layout":{"inherit":true}} -->
+			<section class="wp-block-group entry-excerpt">
+				<!-- wp:spacer {"height":10} -->
+				<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:post-content /-->
+			</section>
+			<!-- /wp:group -->
+			<!-- wp:group {"tagName":"section","className":"entry-footer","layout":{"inherit":true}} -->
+			<section class="wp-block-group entry-footer">
+				<!-- wp:pattern {"slug":"ensemble/entry-footer"} /-->
+			</section>
+			<!-- /wp:group -->
+			<!-- wp:spacer {"height":20} -->
+			<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+			<!-- /wp:spacer -->
 		<!-- /wp:post-template -->
 		<!-- wp:query-pagination -->
 			<div class="wp-block-query-pagination">
