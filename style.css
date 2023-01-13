@@ -70,6 +70,26 @@ body .is-layout-constrained .navigation-top {
 	padding: 1em 1.25em;
 }
 
+@media screen and (max-width: 37.5em) {
+	.site-header > .wp-block-group .is-content-justification-flex-start,
+	.navigation-top > .wp-block-group {
+		justify-content: center;
+	}
+
+	.site-header > .wp-block-group .is-content-justification-flex-start .search-form-container {
+		margin-left: 0;
+	}
+
+	.site-header .wp-block-site-title,
+	.site-header .wp-block-site-tagline {
+		text-align: center;
+	}
+
+	.navigation-top .wp-block-navigation__responsive-container-open {
+		padding: 0.5em 0;
+	}
+}
+
 @media screen and (min-width: 37.5em) {
 	.navigation-top ul.wp-block-navigation__container > li.current-menu-item > a,
 	.navigation-top ul.wp-block-navigation__container > li.current-menu-ancestor > a,
