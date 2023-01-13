@@ -11,6 +11,10 @@ License URI: /LICENSE
 Text Domain: ensemble
 */
 
+a {
+	text-underline-position: under;
+}
+
 .site-header {
     background-color: var(--wp--preset--color--bleu-tres-fonce);
 }
@@ -22,6 +26,11 @@ Text Domain: ensemble
 
 .site-header .wp-block-site-title a {
 	text-decoration: none;
+}
+
+.site-header .wp-block-site-tagline,
+body .is-layout-constrained .navigation-top {
+	margin-block-start: 0;
 }
 
 .site-header .search-form-container {
@@ -101,10 +110,6 @@ main .search-header {
 	margin-block-end: var(--wp--style--block-gap);
 }
 
-.entry-content .ensemble-more-link a.more-link {
-	text-underline-position: under;
-}
-
 .site-footer {
 	margin-top: 2.5em;
 	padding-bottom: 1.5em;
@@ -114,6 +119,18 @@ main .search-header {
 .entry-header .is-layout-flex,
 .entry-footer .is-layout-flex {
 	gap: 5px;
+}
+
+.post-navigation-link-previous:before {
+	content: '← ';
+}
+
+.post-navigation-link-next:after {
+	content: ' →';
+}
+
+.wp-block-comment-author-name a {
+	color: var(--wp--preset--color--black);
 }
 
 /*

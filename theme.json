@@ -146,6 +146,9 @@
 			"heading": {
 				"typography": {
 					"fontWeight": "700"
+				},
+				"color": {
+					"text": "var(--wp--preset--color--black)"
 				}
 			},
 			"h1": {
