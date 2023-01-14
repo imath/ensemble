@@ -11,13 +11,9 @@
 ?>
 <!-- wp:group {"layout":{"type":"flex"}} -->
 <div class="wp-block-group">
-	<!-- wp:paragraph -->
-	<p><?php echo esc_html_x( 'Publié dans', '"Published in" catgory separator', 'ensemble' ); ?></p>
-	<!-- /wp:paragraph -->
-	<!-- wp:post-terms {"term":"category"} /-->
-	<!-- wp:paragraph -->
-	<p><?php echo esc_html_x( 'étiquetté', '"Tagged" tags separator', 'ensemble' ); ?></p>
-	<!-- /wp:paragraph -->
-	<!-- wp:post-terms {"term":"post_tag"} /-->
+	<?php
+	printf( '<!-- wp:post-terms {"term":"category","prefix":"%s ","suffix":","} /-->', esc_html_x( 'Publié dans', '"Published in" catgory separator', 'ensemble' ) );
+	printf( '<!-- wp:post-terms {"term":"post_tag","prefix":"%s ","suffix":"."} /-->', esc_html_x( 'étiquetté', '"Tagged" tags separator', 'ensemble' ) );
+	?>
 </div>
 <!-- /wp:group -->
