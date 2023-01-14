@@ -188,6 +188,13 @@ main .search-header {
 
 .wp-block-comment-author-name a {
 	color: var(--wp--preset--color--black);
+	font-weight: 700;
+}
+
+.wp-block-comment-content blockquote {
+	border-left: solid 3px var(--wp--preset--color--bleu-tres-fonce);
+	margin: 0;
+	padding: 0 1.5em;
 }
 
 /*
