@@ -80,6 +80,15 @@ body .is-layout-constrained .navigation-top {
 		margin-left: 0;
 	}
 
+	.site-header .header-logo {
+		width: 100%;
+	}
+
+	.site-header .wp-block-site-logo {
+		margin: 0 auto;
+		width: fit-content;
+	}
+
 	.site-header .wp-block-site-title,
 	.site-header .wp-block-site-tagline {
 		text-align: center;
