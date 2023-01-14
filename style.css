@@ -117,12 +117,40 @@ body .is-layout-constrained .navigation-top {
 	}
 }
 
+.has-modal-open .wp-block-navigation__container {
+    padding-left: 1em;
+}
+
+.has-modal-open .wp-block-navigation__container a {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
 body:not(.home) .wp-site-blocks > main {
 	padding-top: 0.5em;
 }
 
 body.home .wp-site-blocks > main {
 	margin-block-start: 0;
+}
+
+@media screen and (max-width: 37.5em) {
+	.wp-site-blocks > main .wp-block-post > :not(.alignfull),
+	.wp-site-blocks > main .entry-content.alignfull > :not(.alignfull),
+	body.archive .archive-header,
+	body.page .wp-block-post-title,
+	body.single .entry-header .wp-block-post-title,
+	body.single .entry-header > .wp-block-group,
+	body.single .wp-block-post-content > :not(.alignfull),
+	body.single .entry-footer,
+	body.single .entry-comments {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	body.single .is-layout-constrained > ul:where(:not(.alignleft):not(.alignright):not(.alignfull)) li {
+		margin-left: 1em;
+	}
 }
 
 main .archive-header,
@@ -175,4 +203,14 @@ main .search-header {
 
 .site-footer .wp-block-social-links .paypal-imath svg {
 	visibility: hidden;
+}
+
+@media screen and (max-width: 37.5em) {
+	.site-footer > .wp-block-group .is-content-justification-space-between {
+		justify-content: center;
+	}
+
+	.site-footer > .wp-block-group .is-content-justification-space-between .has-text-align-right {
+		text-align: center;
+	}
 }
