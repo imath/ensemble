@@ -167,6 +167,10 @@ main .search-header {
 	margin-block-end: var(--wp--style--block-gap);
 }
 
+.entry-content .wp-block-cover .has-tertiaire-color a {
+	color: var(--wp--preset--color--tertiaire);
+}
+
 .site-footer {
 	margin-top: 2.5em;
 	padding-bottom: 1.5em;
