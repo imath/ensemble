@@ -209,6 +209,11 @@
 			"name": "search-page",
 			"title": "Page de recherche",
 			"postTypes": ["page"]
+		},
+		{
+			"name": "page-no-title",
+			"title": "Page sans titre",
+			"postTypes": ["page"]
 		}
 	],
 	"templateParts": [
