@@ -155,12 +155,14 @@ main .search-header {
 	border-bottom: solid 1px var(--wp--preset--color--bleu-tres-fonce);
 }
 
-.entry-header .wp-block-ensemble-image-a-la-une img {
+.entry-header .wp-block-ensemble-image-a-la-une img,
+body.page .wp-block-ensemble-image-a-la-une img {
 	max-width: 100%;
 	height: auto;
 }
 
-.entry-header .wp-block-ensemble-image-a-la-une .wp-element-caption {
+.entry-header .wp-block-ensemble-image-a-la-une .wp-element-caption,
+body.page .wp-block-ensemble-image-a-la-une .wp-element-caption {
 	text-align: center;
 	font-size: var(--wp--preset--font-size--ultra-petite);
 }
