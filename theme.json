@@ -214,6 +214,11 @@
 			"name": "page-no-title",
 			"title": "Page sans titre",
 			"postTypes": ["page"]
+		},
+		{
+			"name": "contact-page",
+			"title": "Formulaire de contact",
+			"postTypes": ["page"]
 		}
 	],
 	"templateParts": [
