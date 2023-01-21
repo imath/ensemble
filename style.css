@@ -140,7 +140,8 @@ body.home .wp-site-blocks > main {
 	body.single .entry-header > .wp-block-group,
 	body.single .wp-block-post-content > :not(.alignfull),
 	body.single .entry-footer,
-	body.single .entry-comments {
+	body.single .entry-comments,
+	body.page-template-contact-page .wp-block-post-comments-form {
 		padding-left: 1em;
 		padding-right: 1em;
 	}
