@@ -1,0 +1,129 @@
+# Copyright (C) 2023 imath
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ensemble\n"
+"Report-Msgid-Bugs-To: https://github.com/imath/ensemble/issues\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-01-22T08:19:12+00:00\n"
+"PO-Revision-Date: 2023-01-22 09:34+0100\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Domain: ensemble\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+
+#. Theme Name of the theme
+msgid "Ensemble"
+msgstr "Ensemble"
+
+#. Description of the theme
+msgid ""
+"Ensemble utilise les gabarits de bloc pour afficher les contenus d'un site "
+"WordPress."
+msgstr "Ensemble uses block templates to display a WordPress site content."
+
+#. Author of the theme
+msgid "imath"
+msgstr "imath"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions.php:150
+msgid ""
+"Poursuivre la lecture<span class=\"screen-reader-text\"> de \"%s\"</span>"
+msgstr "Read more<span class=\"screen-reader-text\"> of \"%s\"</span>"
+
+#: patterns/404.php:16
+msgid "Impasse dans le sous-sol des Invalides"
+msgstr "Dead-end inside the Invalides basement"
+
+#. Translators: %s is the Unsplash link for the photo.
+#: patterns/404.php:20
+msgid "Photo d’imath sur %s"
+msgstr "Imath‘s picture from %s"
+
+#: patterns/404.php:32
+msgid "Ouch, vous voici dans une impasse !"
+msgstr "Ouch, you’ve reached a dead-end!"
+
+#: patterns/404.php:35 patterns/search-no-results.php:16
+msgctxt "Message to convey that a webpage could not be found"
+msgid ""
+"Le site n’a pas trouvé ce que vous recherchez. Utilisez le formulaire ci-"
+"dessous pour réssayer avec un texte différent."
+msgstr ""
+"The site did not find what you are looking for. Use the form below to "
+"resubmit a different text."
+
+#: patterns/entry-footer.php:15
+msgctxt "\"Published in\" catgory separator"
+msgid "Publié dans"
+msgstr "Posted in"
+
+#: patterns/entry-footer.php:16
+msgctxt "\"Tagged\" tags separator"
+msgid "étiquetté"
+msgstr "tagged"
+
+#: patterns/entry-header.php:15
+msgctxt "\"Published on\" date separator"
+msgid "Publié le"
+msgstr "Published on"
+
+#: patterns/entry-header.php:19
+msgctxt "\"By\" Author separator"
+msgid "par"
+msgstr "by"
+
+#. Translators: WordPress link.
+#: patterns/footer.php:35
+msgid "Fièrement propulsé par %s"
+msgstr "Proudly powered by %s"
+
+#: patterns/footer.php:36
+msgid "https://fr.wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#. translators: 1: Theme name, 2: Theme author.
+#: patterns/footer.php:43
+msgid "Thème: %1$s de %2$s."
+msgstr "Theme: %1$s from %2$s."
+
+#: patterns/pagination.php:17
+msgid "Articles plus récents"
+msgstr "Next posts"
+
+#: patterns/pagination.php:18
+msgid "Articles plus anciens"
+msgstr "Previous posts"
+
+#: patterns/search-form.php:12
+msgctxt "label"
+msgid "Rechercher"
+msgstr "Search"
+
+#: patterns/search-form.php:12 patterns/site-header-search.php:14
+msgctxt "placeholder for search field"
+msgid "Texte recherché..."
+msgstr "Text to search for..."
+
+#: patterns/search-form.php:12
+msgid "Ok"
+msgstr "Ok"
+
+#: patterns/search-no-results.php:13
+msgid "Ouch, rien par ici !"
+msgstr "Ouch, nothing there!"
+
+#: assets/blocks/image-a-la-une/block.json
+msgctxt "block title"
+msgid "Image à la une"
+msgstr "Featured image"
+
+#: assets/blocks/image-a-la-une/block.json
+msgctxt "block description"
+msgid "Affiche l’image à la une d’une publication"
+msgstr "Displays the post’s featured image"

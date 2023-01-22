@@ -23,6 +23,9 @@ if ( ! function_exists( 'ensemble_setup' ) ) {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
+
+		// Translations.
+		load_theme_textdomain( 'ensemble', get_theme_file_path( '/languages' ) );
 	}
 }
 add_action( 'after_setup_theme', 'ensemble_setup' );
