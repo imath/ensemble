@@ -162,3 +162,38 @@ function ensemble_content_more_link() {
 	);
 }
 add_filter( 'the_content_more_link', 'ensemble_content_more_link', 10, 0 );
+
+/**
+ * Workaround to make sure query pagination labels are translated.
+ *
+ * This function hooks `render_block_context` to transport the `core/query-pagination` block
+ * context inside the 'ensemble/pagination' pattern so that the `core/query-pagination-previous`
+ * & the `core/query-pagination-next` blocks can use it.
+ *
+ * @since 1.0.0
+ *
+ * @param array         $context      Default context.
+ * @param array         $parsed_block Block being rendered, filtered by `render_block_data`.
+ * @param WP_Block|null $parent_block If this is a nested block, a reference to the parent block.
+ * @return string The customized post content's more link.
+ */
+function ensemble_render_query_pagination_block_context( $context, $parsed_block, $parent_block ) {
+	static $pagination_context = array();
+
+	if ( isset( $parsed_block['blockName'], $parsed_block['attrs']['slug'], $parent_block->context ) && 'core/pattern' === $parsed_block['blockName'] && 'ensemble/pagination' === $parsed_block['attrs']['slug'] ) {
+		$pagination_context = $parent_block->context;
+
+		if ( isset( $parent_block->attributes['paginationArrow'] ) ) {
+			$pagination_context['paginationArrow'] = $parent_block->attributes['paginationArrow'];
+		}
+	} elseif ( $pagination_context && isset( $parsed_block['blockName'] ) ) {
+		if ( 'core/query-pagination-next' === $parsed_block['blockName'] || 'core/query-pagination-previous' === $parsed_block['blockName'] ) {
+			$context = $pagination_context;
+		} else {
+			$pagination_context = array();
+		}
+	}
+
+	return $context;
+}
+add_filter( 'render_block_context', 'ensemble_render_query_pagination_block_context', 10, 3 );

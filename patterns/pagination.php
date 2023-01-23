@@ -12,8 +12,6 @@
  *
  * @since 1.0.0
  */
-?>
-<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
-	<?php printf( '<!-- wp:query-pagination-previous {"label":"%s"} /-->', esc_html__( 'Articles plus récents', 'ensemble' ) ); ?>
-	<?php printf( '<!-- wp:query-pagination-next {"label":"%s"} /-->', esc_html__( 'Articles plus anciens', 'ensemble' ) ); ?>
-<!-- /wp:query-pagination -->
+
+printf( '<!-- wp:query-pagination-previous {"label":"%s"} /-->', esc_html__( 'Articles plus récents', 'ensemble' ) );
+printf( '<!-- wp:query-pagination-next {"label":"%s"} /-->', esc_html__( 'Articles plus anciens', 'ensemble' ) );
