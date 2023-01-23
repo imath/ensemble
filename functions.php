@@ -120,9 +120,21 @@ function ensemble_render_block_image_a_la_une( $attributes, $content, $block ) {
  * @since 1.0.0
  */
 function ensemble_register_block_image_a_la_une() {
+	$block_dir   = get_theme_file_path( '/assets/blocks/image-a-la-une' );
+	$script_data = require_once trailingslashit( $block_dir ) . 'index.asset.php';
+
+	wp_register_script(
+		'ensemble-image-a-la-une',
+		get_theme_file_uri( '/assets/blocks/image-a-la-une/index.js' ),
+		array( 'wp-block-editor', 'wp-blocks', 'wp-element', 'wp-i18n' ),
+		$script_data['version'],
+		true
+	);
+
 	register_block_type_from_metadata(
-		get_theme_file_path( '/assets/blocks/image-a-la-une' ),
+		$block_dir,
 		array(
+			'editor_script'   => 'ensemble-image-a-la-une',
 			'render_callback' => 'ensemble_render_block_image_a_la_une',
 		)
 	);

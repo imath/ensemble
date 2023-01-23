@@ -1,0 +1,32 @@
+{
+	"name": "ensemble",
+	"version": "1.0.0",
+	"description": "Ensemble uses block templates to display a WordPress site content.",
+	"scripts": {
+		"start": "wp-scripts start --output-path=assets/blocks/image-a-la-une",
+		"build": "wp-scripts build --output-path=assets/blocks/image-a-la-une"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/imath/ensemble.git"
+	},
+	"keywords": [
+		"blocks",
+		"wordpress",
+		"theme"
+	],
+	"author": "imath",
+	"license": "GPL-2.0-or-later",
+	"bugs": {
+		"url": "https://github.com/imath/ensemble/issues"
+	},
+	"homepage": "https://github.com/imath/ensemble#readme",
+	"devDependencies": {
+		"@wordpress/scripts": "^25.2.0",
+		"@wordpress/babel-preset-default": "^7.9.0",
+		"@wordpress/browserslist-config": "^5.8.0"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	]
+}

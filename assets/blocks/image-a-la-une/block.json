@@ -1,36 +1,47 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
-	"name": "ensemble/image-a-la-une",
-	"title": "Image à la une",
-	"category": "theme",
-	"description": "Affiche l’image à la une d’une publication",
-	"textdomain": "ensemble",
-	"attributes": {
-		"isLink": {
-			"type": "boolean",
-			"default": false
-		},
-		"sizeSlug": {
-			"type": "string"
-		},
-		"rel": {
-			"type": "string",
-			"attribute": "rel",
-			"default": ""
-		},
-		"linkTarget": {
-			"type": "string",
-			"default": "_self"
-		}
-	},
-	"usesContext": [ "postId", "postType", "queryId" ],
-	"supports": {
-		"align": [ "left", "right", "center", "wide", "full" ],
-		"html": false,
-		"spacing": {
-			"margin": true,
-			"padding": true
-		}
-	}
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ensemble/image-a-la-une",
+  "title": "Image à la une",
+  "category": "theme",
+  "icon": "cover-image",
+  "description": "Affiche l’image à la une d’une publication",
+  "textdomain": "ensemble",
+  "attributes": {
+    "isLink": {
+      "type": "boolean",
+      "default": false
+    },
+    "sizeSlug": {
+      "type": "string"
+    },
+    "rel": {
+      "type": "string",
+      "attribute": "rel",
+      "default": ""
+    },
+    "linkTarget": {
+      "type": "string",
+      "default": "_self"
+    }
+  },
+  "usesContext": [
+    "postId",
+    "postType",
+    "queryId"
+  ],
+  "supports": {
+    "align": [
+      "left",
+      "right",
+      "center",
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
 }
