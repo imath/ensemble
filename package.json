@@ -4,7 +4,8 @@
 	"description": "Ensemble uses block templates to display a WordPress site content.",
 	"scripts": {
 		"start": "wp-scripts start --output-path=assets/blocks/image-a-la-une",
-		"build": "wp-scripts build --output-path=assets/blocks/image-a-la-une"
+		"build": "wp-scripts build --output-path=assets/blocks/image-a-la-une",
+		"pot": "wp i18n make-pot . languages/ensemble.pot --domain='ensemble' --exclude=\".git,node_modules,languages,templates,src\" --headers='{\"Project-Id-Version\": \"Ensemble\", \"Report-Msgid-Bugs-To\": \"https://github.com/imath/ensemble/issues\", \"Last-Translator\": \"imath <contact@imathi.eu>\"}'"
 	},
 	"repository": {
 		"type": "git",
