@@ -14,9 +14,6 @@ const {
 	element: {
 		createElement,
 	},
-	i18n: {
-		__,
-	},
 } = wp;
 
 /**

@@ -126,7 +126,7 @@ function ensemble_register_block_image_a_la_une() {
 	wp_register_script(
 		'ensemble-image-a-la-une',
 		get_theme_file_uri( '/assets/blocks/image-a-la-une/index.js' ),
-		array( 'wp-block-editor', 'wp-blocks', 'wp-element', 'wp-i18n' ),
+		array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element' ),
 		$script_data['version'],
 		true
 	);
