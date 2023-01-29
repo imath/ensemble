@@ -161,6 +161,11 @@ main .search-header {
 	gap: 5px;
 }
 
+figure.wp-block-ensemble-image-a-la-une {
+	max-width: 800px;
+	margin-bottom: 24px;
+}
+
 .entry-header .wp-block-ensemble-image-a-la-une img,
 body.page .wp-block-ensemble-image-a-la-une img {
 	max-width: 100%;
@@ -181,6 +186,10 @@ body.page .wp-block-ensemble-image-a-la-une .wp-element-caption {
 	color: var(--wp--preset--color--tertiaire);
 }
 
+.entry-content .wp-block-table {
+	border-collapse: collapse;
+}
+
 .wp-block-embed.aligncenter iframe {
 	margin-left: auto;
 	margin-right: auto;
@@ -195,11 +204,11 @@ body:not(.wp-admin) .plugin-card {
 	padding-top: 1em;
 }
 
-.post-navigation-link-previous:before {
+.post-navigation-link-previous:not(:empty):before {
 	content: '← ';
 }
 
-.post-navigation-link-next:after {
+.post-navigation-link-next:not(:empty):after {
 	content: ' →';
 }
 
