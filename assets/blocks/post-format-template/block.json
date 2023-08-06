@@ -10,7 +10,7 @@
   "attributes": {
     "format": {
       "type": "string",
-			"default": ""
+      "default": "standard"
     }
   },
   "usesContext": [
