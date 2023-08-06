@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "ensemble/post-format-template",
+	"title": "Gabarit des formats d’article",
+	"category": "theme",
+	"icon": "layout",
+	"description": "Vérifie si le format est à appliquer",
+	"textdomain": "ensemble",
+	"attributes": {
+		"format": {
+			"type": "string",
+			"default": "standard"
+		}
+	},
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"supports": {
+		"align": [
+			"left",
+			"right",
+			"center",
+			"wide",
+			"full"
+		],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	}
+}

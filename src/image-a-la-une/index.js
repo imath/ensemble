@@ -1,20 +1,9 @@
 /**
  * WordPress dependencies.
  */
-const {
-	blockEditor: {
-		useBlockProps,
-	},
-	blocks: {
-		registerBlockType,
-	},
-	components: {
-		Placeholder,
-	},
-	element: {
-		createElement,
-	},
-} = wp;
+import { useBlockProps } from '@wordpress/block-editor';
+import { registerBlockType } from '@wordpress/blocks';
+import { Placeholder } from '@wordpress/components';
 
 /**
  * Internal dependencies.

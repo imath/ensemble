@@ -1,10 +1,10 @@
 {
 	"name": "ensemble",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Ensemble uses block templates to display a WordPress site content.",
 	"scripts": {
-		"start": "wp-scripts start --output-path=assets/blocks/image-a-la-une",
-		"build": "wp-scripts build --output-path=assets/blocks/image-a-la-une",
+		"start": "wp-scripts start --config src/webpack.config.js",
+		"build": "wp-scripts build --config src/webpack.config.js",
 		"pot": "wp i18n make-pot . languages/ensemble.pot --domain='ensemble' --exclude=\".git,node_modules,languages,templates,src\" --headers='{\"Project-Id-Version\": \"Ensemble\", \"Report-Msgid-Bugs-To\": \"https://github.com/imath/ensemble/issues\", \"Last-Translator\": \"imath <contact@imathi.eu>\"}'",
 		"zip": "wp-scripts plugin-zip"
 	},

@@ -129,7 +129,7 @@ function ensemble_register_block_image_a_la_une() {
 	wp_register_script(
 		'ensemble-image-a-la-une',
 		get_theme_file_uri( '/assets/blocks/image-a-la-une/index.js' ),
-		array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element' ),
+		$script_data['dependencies'],
 		$script_data['version'],
 		true
 	);
@@ -144,6 +144,16 @@ function ensemble_register_block_image_a_la_une() {
 }
 add_action( 'init', 'ensemble_register_block_image_a_la_une' );
 
+/**
+ * Renders the `ensemble/post-format-template` block on the server.
+ *
+ * @since 1.1.0
+ *
+ * @param array    $attributes Block attributes.
+ * @param string   $content    Block default content.
+ * @param WP_Block $block      Block instance.
+ * @return null|string The post format layout.
+ */
 function ensemble_render_block_post_format_template( $attributes, $content, $block ) {
 	if ( ! isset( $block->context['postId'] ) ) {
 		return '';
@@ -158,7 +168,6 @@ function ensemble_render_block_post_format_template( $attributes, $content, $blo
 	);
 
 	$post_format = get_post_format( $post_id );
-
 	if ( $post_format && $post_format !== $attrs['format'] ) {
 		return null;
 	}
@@ -166,12 +175,27 @@ function ensemble_render_block_post_format_template( $attributes, $content, $blo
 	return $content;
 }
 
+/**
+ * Registers the `ensemble/post-format-template` block on the server.
+ *
+ * @since 1.1.0
+ */
 function ensemble_register_block_post_format_template() {
-	$block_dir = get_theme_file_path( '/assets/blocks/post-format-template' );
+	$block_dir   = get_theme_file_path( '/assets/blocks/post-format-template' );
+	$script_data = require_once trailingslashit( $block_dir ) . 'index.asset.php';
+
+	wp_register_script(
+		'ensemble-post-format-template',
+		get_theme_file_uri( '/assets/blocks/post-format-template/index.js' ),
+		$script_data['dependencies'],
+		$script_data['version'],
+		true
+	);
 
 	$test = register_block_type_from_metadata(
 		$block_dir,
 		array(
+			'editor_script'   => 'ensemble-post-format-template',
 			'render_callback' => 'ensemble_render_block_post_format_template',
 		)
 	);
