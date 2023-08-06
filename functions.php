@@ -18,6 +18,9 @@ if ( ! function_exists( 'ensemble_setup' ) ) {
 	function ensemble_setup() {
 		add_theme_support( 'wp-block-styles' );
 
+		// Use specific post formats.
+		add_theme_support( 'post-formats', array( 'link', 'status' ) );
+
 		// Use specific thumbnail size.
 		set_post_thumbnail_size( 800, 400, true );
 
@@ -140,6 +143,40 @@ function ensemble_register_block_image_a_la_une() {
 	);
 }
 add_action( 'init', 'ensemble_register_block_image_a_la_une' );
+
+function ensemble_render_block_post_format_template( $attributes, $content, $block ) {
+	if ( ! isset( $block->context['postId'] ) ) {
+		return '';
+	}
+
+	$post_id = (int) $block->context['postId'];
+	$attrs   = wp_parse_args(
+		$attributes,
+		array(
+			'format' => '',
+		)
+	);
+
+	$post_format = get_post_format( $post_id );
+
+	if ( $post_format && $post_format !== $attrs['format'] ) {
+		return null;
+	}
+
+	return $content;
+}
+
+function ensemble_register_block_post_format_template() {
+	$block_dir = get_theme_file_path( '/assets/blocks/post-format-template' );
+
+	$test = register_block_type_from_metadata(
+		$block_dir,
+		array(
+			'render_callback' => 'ensemble_render_block_post_format_template',
+		)
+	);
+}
+add_action( 'init', 'ensemble_register_block_post_format_template' );
 
 /**
  * Workaround to customize the post content's more link.
