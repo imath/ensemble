@@ -270,3 +270,17 @@ function ensemble_render_query_pagination_block_context( $context, $parsed_block
 	return $context;
 }
 add_filter( 'render_block_context', 'ensemble_render_query_pagination_block_context', 10, 3 );
+
+/**
+ * Make sure post formats are available from the REST API.
+ *
+ * @since 1.1.0
+ *
+ * @param array $args The `post_format` taxonomy args.
+ * @return array The `post_format` taxonomy args.
+ */
+function ensemble_show_post_format_in_rest( $args = array() ) {
+	$args['show_in_rest'] = true;
+	return $args;
+}
+add_filter( 'register_post_format_taxonomy_args', 'ensemble_show_post_format_in_rest', 10, 1 );
