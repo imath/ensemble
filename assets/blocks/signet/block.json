@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ensemble/signet",
+  "title": "Signet",
+  "category": "embed",
+  "icon": "pressthis",
+  "description": "Embarque une visualisation du lien",
+  "textdomain": "ensemble",
+  "attributes": {
+    "url": {
+      "type": "string",
+      "__experimentalRole": "content"
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    }
+  },
+  "supports": {
+    "align": [
+      "left",
+      "right",
+      "center"
+    ],
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}
