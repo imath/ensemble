@@ -35,30 +35,31 @@ registerBlockType( metadata, {
 		const { format } = attributes;
 		const { postId } = context;
 
-		if ( 'standard' !== format ) {
+		const { postFormats, isLoading } = useSelect(
+			( select ) => {
+				const { getEntityRecords, isResolving } = select( coreStore );
+				const taxonomyArgs = [
+					'taxonomy',
+					'post_format',
+					{
+						post: postId,
+						per_page: -1,
+						context: 'view',
+					},
+				];
+
+				const terms = getEntityRecords( ...taxonomyArgs );
+
+				return {
+					postFormats: terms,
+					isLoading: isResolving( 'getEntityRecords', taxonomyArgs ),
+				};
+			},
+			[ postId ]
+		);
+
+		if ( 'standard' !== format && !! postFormats && postFormats.length ) {
 			const formatSlug = 'post-format-' + format;
-			const { postFormats, isLoading } = useSelect(
-				( select ) => {
-					const { getEntityRecords, isResolving } = select( coreStore );
-					const taxonomyArgs = [
-						'taxonomy',
-						'post_format',
-						{
-							post: postId,
-							per_page: -1,
-							context: 'view',
-						},
-					];
-
-					const terms = getEntityRecords( ...taxonomyArgs );
-
-					return {
-						postFormats: terms,
-						isLoading: isResolving( 'getEntityRecords', taxonomyArgs ),
-					};
-				},
-				[ postId ]
-			);
 
 			if ( false === isLoading && find( postFormats, [ 'slug', formatSlug ] ) ) {
 				/**
@@ -66,7 +67,7 @@ registerBlockType( metadata, {
 				 * to select the template to load.
 				 */
 				const FORMAT_TEMPLATE = [
-					[ 'core/post-title' ],
+					[ 'core/post-content' ],
 				];
 
 				return (
@@ -77,7 +78,7 @@ registerBlockType( metadata, {
 			} else {
 				return null;
 			}
-		} else {
+		} else if ( 'standard' === format && !! postFormats && ! postFormats.length ) {
 			const TEMPLATE = [
 				[ 'core/post-title' ],
 				[ 'core/post-date' ],
@@ -89,6 +90,8 @@ registerBlockType( metadata, {
 					<PostFormatInnerBlocks template={ TEMPLATE } />
 				</div>
 			);
+		} else {
+			return null;
 		}
 	},
 } );
