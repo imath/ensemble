@@ -194,7 +194,11 @@ function ensemble_render_block_post_format_template( $attributes, $content, $blo
 	);
 
 	$post_format = get_post_format( $post_id );
-	if ( $post_format && $post_format !== $attrs['format'] ) {
+	if ( ! $post_format ) {
+		$post_format = 'standard';
+	}
+
+	if ( $post_format !== $attrs['format'] ) {
 		return null;
 	}
 

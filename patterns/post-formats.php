@@ -41,7 +41,7 @@
 		<!-- wp:spacer {"height":"10px"} -->
 		<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 		<!-- /wp:spacer -->
-		<!-- wp:post-title /-->
+		<!-- wp:post-content /-->
 	</section>
 	<!-- /wp:group -->
 <!-- /wp:ensemble/post-format-template -->
