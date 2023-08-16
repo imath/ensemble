@@ -23,7 +23,6 @@
 		?>
 		<!-- wp:social-link {"url":"https://profiles.wordpress.org/imath/","service":"wordpress"} /-->
 		<!-- wp:social-link {"url":"https://github.com/imath/","service":"github"} /-->
-		<!-- wp:social-link {"url":"https://twitter.com/imath/","service":"twitter"} /-->
 		<!-- wp:social-link {"url":"https://paypal.me/imath/","service":"chain","className":"paypal-imath"} /-->
 		</ul>
 		<!-- /wp:social-links -->
