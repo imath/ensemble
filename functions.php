@@ -154,17 +154,25 @@ function ensemble_register_block_signet() {
 	$script_data = require_once trailingslashit( $block_dir ) . 'index.asset.php';
 
 	wp_register_script(
-		'ensemble-signet',
+		'ensemble-signet-script',
 		get_theme_file_uri( '/assets/blocks/signet/index.js' ),
 		$script_data['dependencies'],
 		$script_data['version'],
 		true
 	);
 
+	wp_register_style(
+		'ensemble-signet-style',
+		get_theme_file_uri( '/assets/blocks/signet/style-index.css' ),
+		array(),
+		$script_data['version']
+	);
+
 	register_block_type_from_metadata(
 		$block_dir,
 		array(
-			'editor_script' => 'ensemble-signet',
+			'editor_script' => 'ensemble-signet-script',
+			'style'         => 'ensemble-signet-style',
 		)
 	);
 }
