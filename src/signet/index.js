@@ -3,13 +3,22 @@
  */
 import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import {
+	Placeholder,
+	Button,
+	ExternalLink,
+	Spinner,
+} from '@wordpress/components';
 import { __experimentalFetchUrlData as fetchUrlData } from '@wordpress/core-data';
-import { useEffect, useReducer } from '@wordpress/element';
+import { __unstableStripHTML as stripHTML } from '@wordpress/dom';
+import { useEffect, useReducer, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Internal dependencies.
  */
 import metadata from './block.json';
+import { ReactComponent as Bookmark } from './bookmark.svg';
 
 /**
  * Resolves URL Rich Data.
@@ -56,7 +65,7 @@ function reducer( state, action ) {
  * @param {string} url
  * @returns {object}
  */
-function useRichUrlData( url ) {
+function useRichUrlData( url, setAttributes ) {
 	const [ state, dispatch ] = useReducer( reducer, {
 		richData: null,
 		isFetching: false,
@@ -75,6 +84,13 @@ function useRichUrlData( url ) {
 			fetchUrlData( url, {
 				signal,
 			} ).then( ( urlData ) => {
+				const { title, image, description } = urlData;
+				setAttributes( {
+					title: stripHTML( title ),
+					image: image,
+					description: stripHTML( description ),
+				} );
+
 				dispatch( {
 					type: 'RESOLVED',
 					richData: urlData,
@@ -91,31 +107,126 @@ function useRichUrlData( url ) {
 				controller.abort();
 			};
 		}
-	}, [ url ] );
+	}, [ url, setAttributes ] );
 
 	return state;
 }
 
 registerBlockType( metadata, {
-	edit: () => {
+	icon: Bookmark,
+	edit: ( { attributes, setAttributes, isSelected } ) => {
 		const blockProps = useBlockProps();
-		const url = 'https://wordpress.org/news/2023/08/lionel/';
-
-		const { richData, isFetching } = useRichUrlData( url );
+		const label = __( 'Signet', 'ensemble' );
+		const { url, image, title, description } = attributes;
+		const [ link, setURL ] = useState( url );
+		const [ isEditingURL, setIsEditingURL ] = useState( ! url );
+		const { richData, isFetching } = useRichUrlData( url, setAttributes );
 		const hasRichData = richData && Object.keys( richData ).length;
 
-		/*
-		 * @todo Check gutenberg/packages/block-editor/src/components/link-control/link-preview.js
-		 * to set the output.
-		 */
+		const onSubmit = ( event ) => {
+			if ( event ) {
+				event.preventDefault();
+			}
+
+			setIsEditingURL( false );
+			setAttributes( { url: link } );
+		};
+
+		if ( isEditingURL ) {
+			return (
+				<div { ...blockProps }>
+					<Placeholder
+						icon={ Bookmark }
+						label={ label }
+						className="wp-block-embed"
+						instructions={ __( 'Coller l’URL du signet pour récupérer les informations nécessaires à son aperçu.', 'ensemble' ) }
+					>
+						<form onSubmit={ onSubmit }>
+							<input
+								type="url"
+								value={ link || '' }
+								className="components-placeholder__input"
+								aria-label={ label }
+								placeholder={ __( 'Insérer l’URL du signet pour obtenir son aperçu…', 'ensemble' ) }
+								onChange={ ( event ) => setURL( event.target.value ) }
+							/>
+							<Button variant="primary" type="submit">
+								{ __( 'Intégrer', 'ensemble' ) }
+							</Button>
+						</form>
+					</Placeholder>
+				</div>
+			);
+		}
+
+		if ( !! url ) {
+			if ( isFetching ) {
+				return (
+					<div { ...blockProps }>
+						<div className="wp-block-embed is-loading">
+							<Spinner />
+							<p>{ __( 'Intégration en cours…', 'ensemble' ) }</p>
+						</div>
+					</div>
+				);
+			}
+
+			if ( hasRichData && richData.title ) {
+				return (
+					<div { ...blockProps }>
+						<figure className="ensemble-signet">
+							<a href={ url } className="signet-url">
+								<h2>{ title }</h2>
+							</a>
+
+							{ !! image && (
+								<img src={ image } alt="" />
+							) }
+
+							{ !! description && (
+								<figcaption>{ description }</figcaption>
+							) }
+						</figure>
+					</div>
+				);
+			} else {
+				return (
+					<div { ...blockProps }>
+						<p>{ __( 'Il n’a pas été possible de récupérer les informations nécessaires à l’aperçu de votre signet.', 'ensemble' ) }</p>
+						<ExternalLink
+							href={ url }
+						>
+							{ __( 'Accéder au signet.', 'ensemble' ) }
+						</ExternalLink>
+					</div>
+				);
+			}
+		}
+	},
+	save: ( { attributes } ) => {
+		const blockProps = useBlockProps.save();
+		const { url, image, title, description } = attributes;
+
+		if ( ! url ) {
+			return null;
+		}
 
 		return (
 			<div { ...blockProps }>
-				<p>Hello world</p>
+				<figure className="ensemble-signet">
+					<a href={ url } target="_blank" rel="noreferrer noopener" className="signet-url">
+						<h2>{ title }</h2>
+					</a>
+
+					{ !! image && (
+						<img src={ image } alt="" />
+					) }
+
+					{ !! description && (
+						<figcaption>{ description }</figcaption>
+					) }
+				</figure>
 			</div>
 		);
-	},
-	save: () => {
-		return null;
 	},
 } );
