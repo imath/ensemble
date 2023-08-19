@@ -18,6 +18,7 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies.
  */
 import metadata from './block.json';
+import './style.scss';
 import { ReactComponent as Bookmark } from './bookmark.svg';
 
 /**
@@ -136,7 +137,7 @@ registerBlockType( metadata, {
 			return (
 				<div { ...blockProps }>
 					<Placeholder
-						icon={ Bookmark }
+						icon={ <Bookmark width="24px" /> }
 						label={ label }
 						className="wp-block-embed"
 						instructions={ __( 'Coller l’URL du signet pour récupérer les informations nécessaires à son aperçu.', 'ensemble' ) }
@@ -172,21 +173,28 @@ registerBlockType( metadata, {
 			}
 
 			if ( hasRichData && richData.title ) {
+				const figCaption = !! description ? (
+					<figcaption>{ description }</figcaption>
+				) : '';
+
 				return (
 					<div { ...blockProps }>
-						<figure className="ensemble-signet">
+						<div className="ensemble-signet-title">
+							<Bookmark width="48px" />
 							<a href={ url } className="signet-url">
 								<h2>{ title }</h2>
 							</a>
-
-							{ !! image && (
+						</div>
+						{ !! image && (
+							<figure className="ensemble-signet">
 								<img src={ image } alt="" />
-							) }
+								{ figCaption }
+							</figure>
+						) }
 
-							{ !! description && (
-								<figcaption>{ description }</figcaption>
-							) }
-						</figure>
+						{ ! image && !! description && (
+							<p className="ensemble-signet-description">{ description }</p>
+						) }
 					</div>
 				);
 			} else {
@@ -206,6 +214,9 @@ registerBlockType( metadata, {
 	save: ( { attributes } ) => {
 		const blockProps = useBlockProps.save();
 		const { url, image, title, description } = attributes;
+		const figCaption = !! description ? (
+			<figcaption>{ description }</figcaption>
+		) : '';
 
 		if ( ! url ) {
 			return null;
@@ -213,19 +224,23 @@ registerBlockType( metadata, {
 
 		return (
 			<div { ...blockProps }>
-				<figure className="ensemble-signet">
+				<div className="ensemble-signet-title">
+					<Bookmark width="48px" />
 					<a href={ url } target="_blank" rel="noreferrer noopener" className="signet-url">
 						<h2>{ title }</h2>
 					</a>
+				</div>
 
-					{ !! image && (
+				{ !! image && (
+					<figure className="ensemble-signet-figure">
 						<img src={ image } alt="" />
-					) }
+						{ figCaption }
+					</figure>
+				) }
 
-					{ !! description && (
-						<figcaption>{ description }</figcaption>
-					) }
-				</figure>
+				{ ! image && !! description && (
+					<p className="ensemble-signet-description">{ description }</p>
+				) }
 			</div>
 		);
 	},
