@@ -10,7 +10,25 @@
   "attributes": {
     "url": {
       "type": "string",
-      "__experimentalRole": "content"
+      "source": "attribute",
+      "selector": ".signet-url",
+      "attribute": "href"
+    },
+    "image": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src"
+    },
+    "title": {
+      "type": "string",
+      "source": "text",
+      "selector": "h2"
+    },
+    "description": {
+      "type": "string",
+      "source": "text",
+      "selector": "figcaption"
     },
     "align": {
       "type": "string",
