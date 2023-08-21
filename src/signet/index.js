@@ -181,9 +181,14 @@ registerBlockType( metadata, {
 					<div { ...blockProps }>
 						<div className="ensemble-signet-title">
 							<Bookmark width="48px" />
-							<a href={ url } className="signet-url">
-								<h2>{ title }</h2>
-							</a>
+							<h2>
+								<ExternalLink
+									href={ url }
+									className="signet-url"
+								>
+									{ title }
+								</ExternalLink>
+							</h2>
 						</div>
 						{ !! image && (
 							<figure className="ensemble-signet">
@@ -193,7 +198,9 @@ registerBlockType( metadata, {
 						) }
 
 						{ ! image && !! description && (
-							<p className="ensemble-signet-description">{ description }</p>
+							<div className="ensemble-signet-description">
+								<p>{ description }</p>
+							</div>
 						) }
 					</div>
 				);
@@ -233,14 +240,26 @@ registerBlockType( metadata, {
 
 				{ !! image && (
 					<figure className="ensemble-signet-figure">
-						<img src={ image } alt="" />
+						<a href={ url } target="_blank" rel="noreferrer noopener">
+							<img src={ image } alt="" />
+						</a>
 						{ figCaption }
 					</figure>
 				) }
 
 				{ ! image && !! description && (
-					<p className="ensemble-signet-description">{ description }</p>
+					<div className="ensemble-signet-description">
+						<p>{ description }</p>
+					</div>
 				) }
+
+				<div className="ensemble-signet-read-more">
+					<p class="ensemble-more-link">
+						<a href={ url } className="more-link" target="_blank" rel="noreferrer noopener">
+							{ __( 'Consulter le signet', 'ensemble' ) } &rarr;
+						</a>
+					</p>
+				</div>
 			</div>
 		);
 	},
