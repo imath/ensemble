@@ -190,6 +190,11 @@ body.page .wp-block-ensemble-image-a-la-une .wp-element-caption {
 	border-collapse: collapse;
 }
 
+.signet-content .entry-content,
+.signet-footer.entry-footer > div {
+	max-width: 95%;
+}
+
 .wp-block-embed.aligncenter iframe {
 	margin-left: auto;
 	margin-right: auto;
