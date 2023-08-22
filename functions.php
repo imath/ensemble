@@ -322,3 +322,78 @@ function ensemble_show_post_format_in_rest( $args = array() ) {
 	return $args;
 }
 add_filter( 'register_post_format_taxonomy_args', 'ensemble_show_post_format_in_rest', 10, 1 );
+
+/**
+ * Workaround to use french slugs for supported post formats.
+ *
+ * @since 1.1.0
+ *
+ * @param string $slug The french slug.
+ * @return string The real post format slug.
+ */
+function ensemble_get_post_format_real_slug( $slug ) {
+	$real_slug    = '';
+	$custom_slugs = array(
+		'articles' => 'standard',
+		'signets'  => 'link',
+		'breves'   => 'status',
+	);
+
+	if ( isset( $custom_slugs[ $slug ] ) ) {
+		$real_slug = $custom_slugs[ $slug ];
+	}
+
+	return $real_slug;
+}
+
+/**
+ * Callback function to prefix post format slugs.
+ *
+ * @since 1.1.0
+ *
+ * @param string $slug The post format slug.
+ * @return string The post format slug prefixed with `post-format-` text.
+ */
+function ensemble_post_format_prefix_terms( $slug ) {
+	return 'post-format-' . $slug;
+}
+
+/**
+ * Edit query string just before `_post_format_request` to translate french
+ * post formats & eventually only show "standard" posts.
+ *
+ * @since 1.1.0
+ *
+ * @param array $qs The list of query vars.
+ * @return array The list of query vars.
+ */
+function ensemble_post_format_request( $qs = array() ) {
+	if ( ! isset( $qs['post_format'] ) ) {
+		return $qs;
+	}
+
+	$slug = ensemble_get_post_format_real_slug( $qs['post_format'] );
+	if ( ! $slug ) {
+		return $qs;
+	}
+
+	if ( 'standard' === $slug ) {
+		$post_formats = get_post_format_slugs();
+		unset( $post_formats['standard'], $qs['post_format'] );
+
+		$qs['post_type'] = 'post';
+		$qs['tax_query'] = array(
+			array(
+				'taxonomy' => 'post_format',
+				'terms'    => array_map( 'ensemble_post_format_prefix_terms', array_values( $post_formats ) ),
+				'field'    => 'slug',
+				'operator' => 'NOT IN',
+			)
+		);
+	} else {
+		$qs['post_format'] = $slug;
+	}
+
+	return $qs;
+}
+add_filter( 'request', 'ensemble_post_format_request', 9 );
