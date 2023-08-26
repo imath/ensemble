@@ -14,12 +14,14 @@
 	<!-- wp:query -->
 	<div class="wp-block-query">
 		<!-- wp:post-template -->
-			<!-- wp:group {"tagName":"section","className":"entry-excerpt","layout":{"inherit":true}} -->
-			<section class="wp-block-group entry-excerpt">
-				<!-- wp:spacer {"height":"10px"} -->
-				<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-				<!-- wp:post-title /-->
+			<!-- wp:group {"tagName":"section","className":"entry-excerpt signet-content","layout":{"inherit":true}} -->
+			<section class="wp-block-group entry-excerpt signet-content">
+				<!-- wp:post-content /-->
+			</section>
+			<!-- /wp:group -->
+			<!-- wp:group {"tagName":"section","className":"entry-footer signet-footer","layout":{"inherit":true}} -->
+			<section class="wp-block-group entry-footer signet-footer">
+				<!-- wp:pattern {"slug":"ensemble/post-format-footer"} /-->
 			</section>
 			<!-- /wp:group -->
 			<!-- wp:spacer {"height":"20px"} -->
