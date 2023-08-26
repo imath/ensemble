@@ -397,3 +397,44 @@ function ensemble_post_format_request( $qs = array() ) {
 	return $qs;
 }
 add_filter( 'request', 'ensemble_post_format_request', 9 );
+
+/**
+ * Add an RSS link to Post Format Archive title.
+ *
+ * @since 1.1.0
+ *
+ * @param string $title The Archive title.
+ * @return string HTML Output.
+ */
+function ensemble_prefix_post_format_rss_link( $title = '' ) {
+	if ( ! is_tax( 'post_format' ) ) {
+		return $title;
+	}
+
+	$term = get_queried_object();
+	$url  = '';
+	$icon = block_core_social_link_get_icon( 'feed' );
+
+	if ( $term && isset( $term->term_id, $term->slug, $term->taxonomy ) ) {
+		$url = get_term_feed_link( $term->term_id, $term->taxonomy );
+
+		$custom_titles = array(
+			'post-format-standard' => __( 'Articles', 'ensemble' ),
+			'post-format-link'     => __( 'Signets', 'ensemble' ),
+			'post-format-status'   => __( 'Brèves', 'ensemble' ),
+		);
+
+		if ( isset( $custom_titles[ $term->slug ] ) ) {
+			$title = $custom_titles[ $term->slug ];
+		}
+	}
+
+	return sprintf(
+		'<a href="%1$s" title="%2$s">%3$s</a> %4$s',
+		esc_url( $url ),
+		esc_html__( 'S’abonner au flux de ce type de publication', 'ensemble' ),
+		$icon,
+		esc_html( $title )
+	);
+}
+add_filter( 'get_the_archive_title', 'ensemble_prefix_post_format_rss_link', 10, 1 );
