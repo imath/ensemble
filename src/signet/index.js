@@ -173,33 +173,31 @@ registerBlockType( metadata, {
 			}
 
 			if ( hasRichData && richData.title ) {
-				const figCaption = !! description ? (
-					<figcaption>{ description }</figcaption>
+				const descriptionOutput = !! description ? (
+					<p class="ensemble-signet-description">{ description }</p>
+				) : '';
+				const titleOutput = !! title ? (
+					<a href={ url } target="_blank" rel="noreferrer noopener" className="signet-url">
+						<span className="ensemble-signet-title">{ title }</span>
+					</a>
 				) : '';
 
 				return (
 					<div { ...blockProps }>
-						<div className="ensemble-signet-title">
-							<Bookmark width="48px" />
-							<h2>
-								<ExternalLink
-									href={ url }
-									className="signet-url"
-								>
-									{ title }
-								</ExternalLink>
-							</h2>
-						</div>
 						{ !! image && (
 							<figure className="ensemble-signet">
 								<img src={ image } alt="" />
-								{ figCaption }
+								<figcaption>
+									{ titleOutput }
+									{ descriptionOutput }
+								</figcaption>
 							</figure>
 						) }
 
-						{ ! image && !! description && (
-							<div className="ensemble-signet-description">
-								<p>{ description }</p>
+						{ ! image && (
+							<div className="ensemble-signet-figure">
+								{ titleOutput }
+								{ descriptionOutput }
 							</div>
 						) }
 					</div>
@@ -221,8 +219,13 @@ registerBlockType( metadata, {
 	save: ( { attributes } ) => {
 		const blockProps = useBlockProps.save();
 		const { url, image, title, description } = attributes;
-		const figCaption = !! description ? (
-			<figcaption>{ description }</figcaption>
+		const descriptionOutput = !! description ? (
+			<p class="ensemble-signet-description">{ description }</p>
+		) : '';
+		const titleOutput = !! title ? (
+			<a href={ url } target="_blank" rel="noreferrer noopener" className="signet-url">
+				<span className="ensemble-signet-title">{ title }</span>
+			</a>
 		) : '';
 
 		if ( ! url ) {
@@ -231,35 +234,24 @@ registerBlockType( metadata, {
 
 		return (
 			<div { ...blockProps }>
-				<div className="ensemble-signet-title">
-					<Bookmark width="48px" />
-					<a href={ url } target="_blank" rel="noreferrer noopener" className="signet-url">
-						<h2>{ title }</h2>
-					</a>
-				</div>
-
 				{ !! image && (
 					<figure className="ensemble-signet-figure">
 						<a href={ url } target="_blank" rel="noreferrer noopener">
 							<img src={ image } alt="" />
 						</a>
-						{ figCaption }
+						<figcaption>
+							{ titleOutput }
+							{ descriptionOutput }
+						</figcaption>
 					</figure>
 				) }
 
-				{ ! image && !! description && (
-					<div className="ensemble-signet-description">
-						<p>{ description }</p>
+				{ ! image && (
+					<div className="ensemble-signet-figure">
+						{ titleOutput }
+						{ descriptionOutput }
 					</div>
 				) }
-
-				<div className="ensemble-signet-read-more">
-					<p class="ensemble-more-link">
-						<a href={ url } className="more-link" target="_blank" rel="noreferrer noopener">
-							{ __( 'Consulter le signet', 'ensemble' ) } &rarr;
-						</a>
-					</p>
-				</div>
 			</div>
 		);
 	},

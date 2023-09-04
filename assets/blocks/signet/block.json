@@ -23,12 +23,12 @@
     "title": {
       "type": "string",
       "source": "text",
-      "selector": "h2"
+      "selector": ".ensemble-signet-title"
     },
     "description": {
       "type": "string",
       "source": "text",
-      "selector": "figcaption"
+      "selector": ".ensemble-signet-description"
     },
     "align": {
       "type": "string",
