@@ -1,17 +1,51 @@
 .wp-block-ensemble-signet {
+	color: #FFF;
 
-	.ensemble-signet-title {
-		display: flex;
+	> div {
+
+		> a,
+		> p {
+			padding: 0 1em;
+			display: block;
+		}
+
+		> a {
+			margin-top: 1em;
+		}
 	}
 
-	figure {
+	&.aligncenter {
+
+		.ensemble-signet-figure {
+			margin: 0 auto;
+		}
+	}
+
+	.ensemble-signet-figure {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		max-width: 600px;
+		border: solid 1px var(--wp--preset--color--bleu-tres-fonce);
+		border-radius: 5px;
+		background-color: var(--wp--preset--color--bleu-tres-fonce);
+
+		a,
+		p {
+			color: #FFF;
+		}
 
 		img {
 			max-width: 100%;
 			padding-bottom: 1em;
+		}
+
+		figcaption {
+			padding: 0 1em;
+		}
+
+		.ensemble-signet-title {
+			font-size: 1.3rem;
 		}
 	}
 }

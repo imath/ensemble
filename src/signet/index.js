@@ -185,7 +185,7 @@ registerBlockType( metadata, {
 				return (
 					<div { ...blockProps }>
 						{ !! image && (
-							<figure className="ensemble-signet">
+							<figure className="ensemble-signet-figure">
 								<img src={ image } alt="" />
 								<figcaption>
 									{ titleOutput }
