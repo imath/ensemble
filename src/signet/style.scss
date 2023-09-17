@@ -33,6 +33,16 @@
 		a,
 		p {
 			color: #FFF;
+
+			&.ensemble-signet-description {
+				margin-top: 0;
+				margin-bottom: 1em;
+			}
+
+			&.signet-url {
+				display: block;
+				margin-bottom: 1em;
+			}
 		}
 
 		img {
