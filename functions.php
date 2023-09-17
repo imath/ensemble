@@ -347,6 +347,29 @@ function ensemble_get_post_format_real_slug( $slug ) {
 }
 
 /**
+ * Get the Post Format Archive title.
+ *
+ * @since 1.1.0
+ *
+ * @param string $post_format The Post format slug.
+ * @return string The Post Format Archive title.
+ */
+function ensemble_get_post_format_name( $post_format = '' ) {
+	$name              = '';
+	$post_format_names = array(
+		'post-format-link'     => __( 'Signets', 'ensemble' ),
+		'post-format-standard' => __( 'Articles', 'ensemble' ),
+		'post-format-status'   => __( 'Brèves', 'ensemble' ),
+	);
+
+	if ( isset( $post_format_names[ $post_format ] ) ) {
+		$name = $post_format_names[ $post_format ];
+	}
+
+	return $name;
+}
+
+/**
  * Callback function to prefix post format slugs.
  *
  * @since 1.1.0
@@ -390,13 +413,80 @@ function ensemble_post_format_request( $qs = array() ) {
 				'operator' => 'NOT IN',
 			)
 		);
+
+		// Override the query to adjust Post format data.
+		add_filter( 'parse_query', 'ensemble_post_format_query', 9 );
 	} else {
 		$qs['post_format'] = $slug;
 	}
 
+	// Filter the document title to improve it with custom post format names.
+	add_filter( 'document_title_parts', 'ensemble_document_title_parts', 10, 1 );
+
 	return $qs;
 }
 add_filter( 'request', 'ensemble_post_format_request', 9 );
+
+/**
+ * Overrides the query to really use Standard post format archive template.
+ *
+ * @since 1.1.0
+ *
+ * @param WP_Query $posts_query The WP Query.
+ */
+function ensemble_post_format_query( $posts_query ) {
+	remove_filter( 'parse_query', 'ensemble_post_format_query', 9 );
+
+	if ( ! $posts_query->is_feed ) {
+		$posts_query->is_home    = false;
+		$posts_query->is_archive = true;
+		$posts_query->is_tax     = true;
+
+		$slug                        = 'post-format-standard';
+		$posts_query->queried_object = (object) array(
+			'term_id'          => 0,
+			'name'             => ensemble_get_post_format_name( $slug ),
+			'slug'             => $slug,
+			'term_group'       => 0,
+			'term_taxonomy_id' => 0,
+			'taxonomy'         => 'post_format',
+			'description'      => '',
+			'parent'           => 0,
+			'count'            => 1,
+			'filter'           => 'raw',
+		);
+
+		$posts_query->queried_object_id = 0;
+	}
+}
+
+/**
+ * Edit the document title for Post formats.
+ *
+ * @since 1.1.0
+ *
+ * @param array $parts The document title parts.
+ * @return array Edited document title parts.
+ */
+function ensemble_document_title_parts( $parts = array() ) {
+	remove_filter( 'document_title_parts', 'ensemble_document_title_parts', 10, 1 );
+
+	$queried_object = get_queried_object();
+	if ( isset( $queried_object->taxonomy, $queried_object->slug ) && 'post_format' === $queried_object->taxonomy ) {
+		$post_format_title = ensemble_get_post_format_name( $queried_object->slug );
+
+		if ( $post_format_title ) {
+			$parts = array_merge(
+				$parts,
+				array(
+					'title' => $post_format_title,
+				)
+			);
+		}
+	}
+
+	return $parts;
+}
 
 /**
  * Add an RSS link to Post Format Archive title.
@@ -416,17 +506,13 @@ function ensemble_prefix_post_format_rss_link( $title = '' ) {
 	$icon = block_core_social_link_get_icon( 'feed' );
 
 	if ( $term && isset( $term->term_id, $term->slug, $term->taxonomy ) ) {
-		$url = get_term_feed_link( $term->term_id, $term->taxonomy );
-
-		$custom_titles = array(
-			'post-format-standard' => __( 'Articles', 'ensemble' ),
-			'post-format-link'     => __( 'Signets', 'ensemble' ),
-			'post-format-status'   => __( 'Brèves', 'ensemble' ),
-		);
-
-		if ( isset( $custom_titles[ $term->slug ] ) ) {
-			$title = $custom_titles[ $term->slug ];
+		if ( 0 === $term->term_id && 'post-format-standard' === $term->slug ) {
+			$url = home_url( 'type/articles/feed/' );
+		} else {
+			$url = get_term_feed_link( $term->term_id, $term->taxonomy );
 		}
+
+		$title = ensemble_get_post_format_name( $term->slug );
 	}
 
 	return sprintf(
