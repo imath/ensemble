@@ -66,7 +66,7 @@ function reducer( state, action ) {
  * @param {string} url
  * @returns {object}
  */
-function useRichUrlData( url, setAttributes ) {
+function useRichUrlData( url, setAttributes, attributes ) {
 	const [ state, dispatch ] = useReducer( reducer, {
 		richData: null,
 		isFetching: false,
@@ -87,9 +87,9 @@ function useRichUrlData( url, setAttributes ) {
 			} ).then( ( urlData ) => {
 				const { title, image, description } = urlData;
 				setAttributes( {
-					title: stripHTML( title ),
-					image: image,
-					description: stripHTML( description ),
+					title: !! attributes.title ? stripHTML( attributes.title ) : stripHTML( title ),
+					image: !! attributes.image ?  attributes.image : image,
+					description: !! attributes.description ? stripHTML( attributes.description ) : stripHTML( description ),
 				} );
 
 				dispatch( {
@@ -108,7 +108,7 @@ function useRichUrlData( url, setAttributes ) {
 				controller.abort();
 			};
 		}
-	}, [ url, setAttributes ] );
+	}, [ url, setAttributes, attributes ] );
 
 	return state;
 }
@@ -121,7 +121,7 @@ registerBlockType( metadata, {
 		const { url, image, title, description } = attributes;
 		const [ link, setURL ] = useState( url );
 		const [ isEditingURL, setIsEditingURL ] = useState( ! url );
-		const { richData, isFetching } = useRichUrlData( url, setAttributes );
+		const { richData, isFetching } = useRichUrlData( url, setAttributes, attributes );
 		const hasRichData = richData && Object.keys( richData ).length;
 
 		const onSubmit = ( event ) => {
