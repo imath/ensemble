@@ -13,5 +13,5 @@
  * @since 1.0.0
  */
 
-printf( '<!-- wp:query-pagination-previous {"label":"%s"} /-->', esc_html__( 'Articles plus récents', 'ensemble' ) );
-printf( '<!-- wp:query-pagination-next {"label":"%s"} /-->', esc_html__( 'Articles plus anciens', 'ensemble' ) );
+printf( '<!-- wp:query-pagination-previous {"label":"%s"} /-->', esc_html__( 'Publications plus récentes', 'ensemble' ) );
+printf( '<!-- wp:query-pagination-next {"label":"%s"} /-->', esc_html__( 'Publications plus anciennes', 'ensemble' ) );

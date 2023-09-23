@@ -185,11 +185,28 @@ body.page .wp-block-ensemble-image-a-la-une .wp-element-caption {
 	border-collapse: collapse;
 }
 
-.signet-content .entry-content {
+.signet-content .entry-content,
+.breve-content .entry-content {
 	max-width: 95%;
 }
 
-.post_format-post-format-link .wp-block-post-date {
+.breve-content .entry-content p {
+	border-radius: 5px;
+	background-color: var(--wp--preset--color--gris-tres-leger);
+	color: var(--wp--preset--color--bleu-tres-fonce);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 560px;
+	margin-left: auto !important;
+    margin-right: auto !important;
+	padding: 20px;
+	font-size: 1.15rem;
+	font-style: italic;
+}
+
+.post_format-post-format-link .wp-block-post-date,
+.post_format-post-format-status .wp-block-post-date {
 	font-weight: 700;
 }
 
