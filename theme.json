@@ -216,6 +216,11 @@
 	},
 	"customTemplates": [
 		{
+			"name": "about-me",
+			"title": "Page à propos",
+			"postTypes": ["page"]
+		},
+		{
 			"name": "search-page",
 			"title": "Page de recherche",
 			"postTypes": ["page"]
