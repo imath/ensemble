@@ -99,16 +99,11 @@ body .is-layout-constrained .navigation-top {
 @media screen and (min-width: 37.5em) {
 	.navigation-top ul.wp-block-navigation__container > li.current-menu-item > a,
 	.navigation-top ul.wp-block-navigation__container > li.current-menu-ancestor > a,
-	/*
-	 * As WordPress 6.1 doesn't include this [Gutenberg commit](https://github.com/WordPress/gutenberg/commit/93d317a9c6d2328f39b9da497f2eb32c60ec31e5)
-	 * yet, the following workaround (specific to my pesonal blog) is necessary.
-	 * NB: when Gutenberg 14.8 will be merged into WordPress, I'll be able to remove it!
-	 */
-	body.blog .navigation-top ul.wp-block-navigation__container > li.blog-page > a,
-	body.single .navigation-top ul.wp-block-navigation__container > li.blog-page > a,
-	body.archive .navigation-top ul.wp-block-navigation__container > li.blog-page > a,
-	body.search .navigation-top ul.wp-block-navigation__container > li.blog-page > a,
-	body.page-template-search-page .navigation-top ul.wp-block-navigation__container > li.blog-page > a,
+	body.blog .navigation-top ul.wp-block-navigation__container > li.home-page > a,
+	body.single .navigation-top ul.wp-block-navigation__container > li.home-page > a,
+	body.archive .navigation-top ul.wp-block-navigation__container > li.home-page > a,
+	body.search .navigation-top ul.wp-block-navigation__container > li.home-page > a,
+	body.page-template-search-page .navigation-top ul.wp-block-navigation__container > li.home-page > a,
 	body.home .navigation-top ul.wp-block-navigation__container > li.home-page > a {
 		box-shadow: inset 0 -1px 0 var(--wp--preset--color--bleu-tres-fonce);
 	}
@@ -123,11 +118,11 @@ body .is-layout-constrained .navigation-top {
     text-underline-position: under;
 }
 
-body:not(.home) .wp-site-blocks > main {
+body:not(.page-template-about-me) .wp-site-blocks > main {
 	padding-top: 0.5em;
 }
 
-body.home .wp-site-blocks > main {
+body.page-template-about-me .wp-site-blocks > main {
 	margin-block-start: 0;
 }
 
