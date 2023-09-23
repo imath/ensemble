@@ -161,6 +161,11 @@
 					"fontSize": "var(--wp--preset--font-size--grande)"
 				}
 			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--grande)"
+				}
+			},
 			"h4": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--petite)"
