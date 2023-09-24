@@ -216,6 +216,13 @@
 						"bottom": "1em"
 					}
 				}
+			},
+			"core/image": {
+				"spacing": {
+					"padding": {
+						"top": "1em"
+					}
+				}
 			}
 		}
 	},

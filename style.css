@@ -206,7 +206,9 @@ body.page .wp-block-ensemble-image-a-la-une .wp-element-caption {
 }
 
 .post_format-post-format-link .wp-block-post-date,
-.post_format-post-format-status .wp-block-post-date {
+.post_format-post-format-status .wp-block-post-date,
+.single-format-status .wp-block-post-date,
+.single-format-link .wp-block-post-date {
 	font-weight: 700;
 }
 

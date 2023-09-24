@@ -14,6 +14,6 @@
 	<!-- wp:heading {"className":"wp-block-post-title"} -->
 		<h2 class="wp-block-post-title"><?php echo esc_html_x( 'Brève publiée le', '"Published on" date separator', 'ensemble' ); ?></h2>
 	<!-- /wp:heading -->
-	<!-- wp:post-date {"fontSize":"grande","textColor":"black"} /-->
+	<!-- wp:post-date {"fontSize":"grande","textColor":"black","format":"j F Y à G\\hi"} /-->
 </div>
 <!-- /wp:group -->

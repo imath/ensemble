@@ -241,6 +241,27 @@ function ensemble_register_block_post_format_template() {
 add_action( 'init', 'ensemble_register_block_post_format_template' );
 
 /**
+ * Adds a single template to the single template hierarchy.
+ *
+ * @since 1.1.0
+ *
+ * @param array $templates The list of possible template to view a post.
+ * @return array           The same list with possibly a specific template for post using a post format.
+ */
+function ensemble_set_single_post_format_templates( $templates = array() ) {
+	$post        = get_queried_object();
+	$post_format = get_post_format( $post );
+
+	if ( $post_format ) {
+		$primary_template = array_shift( $templates );
+		array_unshift( $templates, $primary_template, "single-post-format-{$post_format}.php" );
+	}
+
+	return $templates;
+}
+add_filter( 'single_template_hierarchy', 'ensemble_set_single_post_format_templates' );
+
+/**
  * Workaround to customize the post content's more link.
  *
  * @todo Check why the `wp:post-content` block does not include an attribute to
