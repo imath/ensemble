@@ -391,6 +391,33 @@ function ensemble_get_post_format_name( $post_format = '' ) {
 }
 
 /**
+ * Gets a supported post format title.
+ *
+ * @since 1.1.0
+ *
+ * @param WP_Post $post The post object.
+ * @return string The supported post format title.
+ */
+function ensemble_get_post_format_title( $post ) {
+	$post_format_title  = '';
+
+	$post_format = get_post_format( $post );
+	if ( $post_format ) {
+		$date               = get_the_date( 'd/m/Y à G\\hi', $post );
+		$post_format_titles = array(
+			'link'   => sprintf( __( 'Signet publié le %s', 'ensemble' ), $date ),
+			'status' => sprintf( __( 'Brève publiée le %s', 'ensemble' ), $date ),
+		);
+
+		if ( isset( $post_format_titles[ $post_format ] ) ) {
+			$post_format_title = $post_format_titles[ $post_format ];
+		}
+	}
+
+	return $post_format_title;
+}
+
+/**
  * Callback function to prefix post format slugs.
  *
  * @since 1.1.0
@@ -508,6 +535,27 @@ function ensemble_document_title_parts( $parts = array() ) {
 
 	return $parts;
 }
+
+/**
+ * Adds a document title to single post formats before it is sanitized.
+ *
+ * @since 1.1.0
+ *
+ * @param string $title The post title.
+ * @param WP_Post $post The current post object being displayed.
+ */
+function ensemble_single_post_title( $title, $post ) {
+	if ( ! $title ) {
+		$post_format_title = ensemble_get_post_format_title( $post );
+
+		if ( $post_format_title ) {
+			$title = $post_format_title;
+		}
+	}
+
+	return $title;
+}
+add_filter( 'single_post_title', 'ensemble_single_post_title', 9, 2 );
 
 /**
  * Add an RSS link to Post Format Archive title.
