@@ -405,7 +405,9 @@ function ensemble_get_post_format_title( $post ) {
 	if ( $post_format ) {
 		$date               = get_the_date( 'd/m/Y à G\\hi', $post );
 		$post_format_titles = array(
+			/* translators: %s is the post published date. */
 			'link'   => sprintf( __( 'Signet publié le %s', 'ensemble' ), $date ),
+			/* translators: %s is the post published date. */
 			'status' => sprintf( __( 'Brève publiée le %s', 'ensemble' ), $date ),
 		);
 

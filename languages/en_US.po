@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ensemble\n"
 "Report-Msgid-Bugs-To: https://github.com/imath/ensemble/issues\n"
-"POT-Creation-Date: 2023-01-25T02:37:00+00:00\n"
-"PO-Revision-Date: 2023-01-25 03:39+0100\n"
+"POT-Creation-Date: 2023-09-26T01:33:13+00:00\n"
+"PO-Revision-Date: 2023-09-26 03:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -31,10 +31,36 @@ msgid "imath"
 msgstr "imath"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions.php:165
+#: functions.php:285
 msgid ""
 "Poursuivre la lecture<span class=\"screen-reader-text\"> de \"%s\"</span>"
 msgstr "Read more<span class=\"screen-reader-text\"> of \"%s\"</span>"
+
+#: functions.php:381
+msgid "Signets"
+msgstr "Bookmarks"
+
+#: functions.php:382
+msgid "Articles"
+msgstr "Posts"
+
+#: functions.php:383
+msgid "Brèves"
+msgstr "Briefs"
+
+#. translators: %s is the post published date.
+#: functions.php:409
+msgid "Signet publié le %s"
+msgstr "Bookmark published on %s"
+
+#. translators: %s is the post published date.
+#: functions.php:411
+msgid "Brève publiée le %s"
+msgstr "Brief published on %s"
+
+#: functions.php:592
+msgid "S’abonner au flux de ce type de publication"
+msgstr "Subscribe to the feed for this type of publication"
 
 #: patterns/404.php:16
 msgid "Impasse dans le sous-sol des Invalides"
@@ -58,6 +84,16 @@ msgstr ""
 "The site did not find what you are looking for. Use the form below to "
 "resubmit a different text."
 
+#: patterns/breve-header-three.php:15
+msgctxt "\"Published on\" date separator"
+msgid "Publiée le"
+msgstr "Published on"
+
+#: patterns/breve-header-two.php:15
+msgctxt "\"Published on\" date separator"
+msgid "Brève publiée le"
+msgstr "Published on"
+
 #: patterns/entry-footer.php:15
 msgctxt "\"Published in\" catgory separator"
 msgid "Publié dans"
@@ -68,7 +104,7 @@ msgctxt "\"Tagged\" tags separator"
 msgid "étiquetté"
 msgstr "tagged"
 
-#: patterns/entry-header.php:15
+#: patterns/entry-header.php:15 patterns/signet-header-three.php:15
 msgctxt "\"Published on\" date separator"
 msgid "Publié le"
 msgstr "Published on"
@@ -79,25 +115,25 @@ msgid "par"
 msgstr "by"
 
 #. Translators: WordPress link.
-#: patterns/footer.php:35
+#: patterns/footer.php:34
 msgid "Fièrement propulsé par %s"
 msgstr "Proudly powered by %s"
 
-#: patterns/footer.php:36
+#: patterns/footer.php:35
 msgid "https://fr.wordpress.org/"
 msgstr "https://wordpress.org/"
 
 #. translators: 1: Theme name, 2: Theme author.
-#: patterns/footer.php:43
+#: patterns/footer.php:42
 msgid "Thème: %1$s de %2$s."
 msgstr "Theme: %1$s from %2$s."
 
 #: patterns/pagination.php:16
-msgid "Articles plus récents"
+msgid "Publications plus récentes"
 msgstr "Next posts"
 
 #: patterns/pagination.php:17
-msgid "Articles plus anciens"
+msgid "Publications plus anciennes"
 msgstr "Previous posts"
 
 #: patterns/search-form.php:12
@@ -118,6 +154,44 @@ msgstr "Ok"
 msgid "Ouch, rien par ici !"
 msgstr "Ouch, nothing there!"
 
+#: patterns/signet-header-two.php:15
+msgctxt "\"Published on\" date separator"
+msgid "Signet publié le"
+msgstr "Bookmark published on"
+
+#: assets/blocks/signet/index.js:1
+msgid "Signet"
+msgstr "Bookmark"
+
+#: assets/blocks/signet/index.js:1
+msgid ""
+"Coller l’URL du signet pour récupérer les informations nécessaires à son "
+"aperçu."
+msgstr ""
+"Paste the bookmark URL to retrieve the information needed to preview it."
+
+#: assets/blocks/signet/index.js:1
+msgid "Insérer l’URL du signet pour obtenir son aperçu…"
+msgstr "Insert bookmark URL to preview.."
+
+#: assets/blocks/signet/index.js:1
+msgid "Intégrer"
+msgstr "Embed"
+
+#: assets/blocks/signet/index.js:1
+msgid "Intégration en cours…"
+msgstr "Embedding…"
+
+#: assets/blocks/signet/index.js:1
+msgid ""
+"Il n’a pas été possible de récupérer les informations nécessaires à l’aperçu "
+"de votre signet."
+msgstr "Retrieving the information needed to preview your bookmark failed."
+
+#: assets/blocks/signet/index.js:1
+msgid "Accéder au signet."
+msgstr "Open bookmark."
+
 #: assets/blocks/image-a-la-une/block.json
 msgctxt "block title"
 msgid "Image à la une"
@@ -127,3 +201,23 @@ msgstr "Featured image"
 msgctxt "block description"
 msgid "Affiche l’image à la une d’une publication"
 msgstr "Displays the post’s featured image"
+
+#: assets/blocks/post-format-template/block.json
+msgctxt "block title"
+msgid "Gabarit des formats d’article"
+msgstr "Post formats template"
+
+#: assets/blocks/post-format-template/block.json
+msgctxt "block description"
+msgid "Vérifie si le format est à appliquer"
+msgstr "Checks whether to apply a post format"
+
+#: assets/blocks/signet/block.json
+msgctxt "block title"
+msgid "Signet"
+msgstr "Bookmark"
+
+#: assets/blocks/signet/block.json
+msgctxt "block description"
+msgid "Embarque une visualisation du lien"
+msgstr "Provides a link preview"
