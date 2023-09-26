@@ -420,6 +420,61 @@ function ensemble_get_post_format_title( $post ) {
 }
 
 /**
+ * Displays the post format instead of the post title if needed.
+ *
+ * @since 1.1.0
+ *
+ * @param string $post_title The post title.
+ * @param integer $post_id The post ID.
+ * @return string The post title.
+ */
+function ensemble_admin_post_format_title( $post_title, $post_id ) {
+	if ( ! $post_title ) {
+		$post = get_post( $post_id );
+
+		$post_format = get_post_format( $post );
+		if ( $post_format ) {
+			$post_format_titles = array(
+				/* translators: %d is the post ID. */
+				'link'   => sprintf( __( 'Signet #%d', 'ensemble' ), $post_id ),
+				/* translators: %d is the post ID. */
+				'status' => sprintf( __( 'Brève #%d', 'ensemble' ), $post_id ),
+			);
+
+			if ( isset( $post_format_titles[ $post_format ] ) ) {
+				$post_title = $post_format_titles[ $post_format ];
+			}
+		}
+	}
+
+	return $post_title;
+}
+
+/**
+ * Adds a filter to post title to eventually inform about the post format.
+ *
+ * @since 1.1.0
+ */
+function ensemble_admin_add_title_filter() {
+	if ( isset( $GLOBALS['typenow'] ) && 'post' === $GLOBALS['typenow'] ) {
+		add_filter( 'the_title', 'ensemble_admin_post_format_title', 5, 2 );
+	}
+}
+add_action( 'load-edit.php', 'ensemble_admin_add_title_filter' );
+
+/**
+ * Removes the post title filter informing about the post format.
+ *
+ * @since 1.1.0
+ */
+function ensemble_admin_remove_title_filter() {
+	if ( isset( $GLOBALS['typenow'] ) && 'post' === $GLOBALS['typenow'] ) {
+		remove_filter( 'the_title', 'ensemble_admin_post_format_title', 5, 2 );
+	}
+}
+add_action( 'admin_footer-edit.php', 'ensemble_admin_remove_title_filter' );
+
+/**
  * Callback function to prefix post format slugs.
  *
  * @since 1.1.0
