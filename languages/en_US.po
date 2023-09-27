@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ensemble\n"
 "Report-Msgid-Bugs-To: https://github.com/imath/ensemble/issues\n"
-"POT-Creation-Date: 2023-09-26T01:33:13+00:00\n"
-"PO-Revision-Date: 2023-09-26 03:40+0200\n"
+"POT-Creation-Date: 2023-09-27T00:39:07+00:00\n"
+"PO-Revision-Date: 2023-09-27 02:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -58,7 +58,17 @@ msgstr "Bookmark published on %s"
 msgid "Brève publiée le %s"
 msgstr "Brief published on %s"
 
-#: functions.php:592
+#. translators: %d is the post ID.
+#: functions.php:439
+msgid "Signet #%d"
+msgstr "Bookmark #%d"
+
+#. translators: %d is the post ID.
+#: functions.php:441
+msgid "Brève #%d"
+msgstr "Brief #%d"
+
+#: functions.php:647
 msgid "S’abonner au flux de ce type de publication"
 msgstr "Subscribe to the feed for this type of publication"
 
