@@ -1,7 +1,7 @@
 {
 	"name": "ensemble",
 	"version": "1.2.0-alpha",
-	"description": "Ensemble uses block templates to display a WordPress site content.",
+	"description": "Ensemble uses block templates to display a Retraceur site content.",
 	"scripts": {
 		"start": "wp-scripts start --config src/webpack.config.js",
 		"build": "wp-scripts build --config src/webpack.config.js",
@@ -14,7 +14,7 @@
 	},
 	"keywords": [
 		"blocks",
-		"wordpress",
+		"retraceur-theme",
 		"theme"
 	],
 	"author": "imath",

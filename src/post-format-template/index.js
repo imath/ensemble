@@ -4,7 +4,7 @@
 import { find } from 'lodash';
 
 /**
- * WordPress dependencies.
+ * WP dependencies.
  */
 import {
 	useBlockProps,

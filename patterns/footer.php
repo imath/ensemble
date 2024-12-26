@@ -30,7 +30,7 @@
 		<p class="has-text-align-right">
 		<?php
 		printf(
-			/* Translators: WordPress link. */
+			/* Translators: Retraceur link. */
 			esc_html__( 'Fièrement propulsé par %s', 'ensemble' ),
 			'<a href="' . esc_url( __( 'https://retraceur.github.io/', 'ensemble' ) ) . '" rel="nofollow">Retraceur</a>'
 		);

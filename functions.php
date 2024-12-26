@@ -2,8 +2,6 @@
 /**
  * Ensemble functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package /ensemble
  *
  * @since 1.0.0
@@ -266,8 +264,6 @@ add_filter( 'single_template_hierarchy', 'ensemble_set_single_post_format_templa
  *
  * @todo Check why the `wp:post-content` block does not include an attribute to
  *       customize the post content's more link.
- *
- * @see https://github.com/WordPress/gutenberg/issues/47046
  *
  * @since 1.0.0
  *

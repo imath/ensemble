@@ -1,5 +1,5 @@
 /**
- * WordPress dependencies.
+ * WP dependencies.
  */
 import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
@@ -25,8 +25,6 @@ import { ReactComponent as Bookmark } from './bookmark.svg';
  * Resolves URL Rich Data.
  *
  * Copy/pasted from Block Editor's link-control.
- *
- * @link https://github.com/WordPress/gutenberg
  *
  * @param {object} state
  * @param {object} action
@@ -60,8 +58,6 @@ function reducer( state, action ) {
  * Gets URL Rich Data.
  *
  * Adapted from Block Editor's link-control.
- *
- * @link https://github.com/WordPress/gutenberg
  *
  * @param {string} url
  * @returns {object}
