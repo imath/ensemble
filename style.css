@@ -135,9 +135,7 @@ body.page-template-about-me .wp-site-blocks > main {
 	body.single .entry-header .wp-block-post-title,
 	body.single .entry-header > .wp-block-group,
 	body.single .wp-block-post-content > :not(.alignfull),
-	body.single .entry-footer,
-	body.single .entry-comments,
-	body.page-template-contact-page .wp-block-post-comments-form {
+	body.single .entry-foote {
 		padding-left: 1em;
 		padding-right: 1em;
 	}
@@ -230,17 +228,6 @@ body:not(.wp-admin) .plugin-card {
 
 .post-navigation-link-next:not(:empty):after {
 	content: ' →';
-}
-
-.wp-block-comment-author-name a {
-	color: var(--wp--preset--color--black);
-	font-weight: 700;
-}
-
-.wp-block-comment-content blockquote {
-	border-left: solid 3px var(--wp--preset--color--bleu-tres-fonce);
-	margin: 0;
-	padding: 0 1.5em;
 }
 
 .site-footer {
