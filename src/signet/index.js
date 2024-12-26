@@ -170,7 +170,7 @@ registerBlockType( metadata, {
 
 			if ( hasRichData && richData.title ) {
 				const descriptionOutput = !! description ? (
-					<p class="ensemble-signet-description">{ description }</p>
+					<p className="ensemble-signet-description">{ description }</p>
 				) : '';
 				const titleOutput = !! title ? (
 					<a href={ url } target="_blank" rel="noreferrer noopener" className="signet-url">
@@ -216,7 +216,7 @@ registerBlockType( metadata, {
 		const blockProps = useBlockProps.save();
 		const { url, image, title, description } = attributes;
 		const descriptionOutput = !! description ? (
-			<p class="ensemble-signet-description">{ description }</p>
+			<p className="ensemble-signet-description">{ description }</p>
 		) : '';
 		const titleOutput = !! title ? (
 			<a href={ url } target="_blank" rel="noreferrer noopener" className="signet-url">
