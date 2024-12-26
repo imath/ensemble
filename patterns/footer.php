@@ -21,7 +21,7 @@
 			esc_url( get_bloginfo( 'rss2_url' ) )
 		);
 		?>
-		<!-- wp:social-link {"url":"https://profiles.wordpress.org/imath/","service":"wordpress"} /-->
+		<!-- wp:social-link {"url":"https://bsky.app/profile/imathi.eu","service":"bluesky"} /-->
 		<!-- wp:social-link {"url":"https://github.com/imath/","service":"github"} /-->
 		<!-- wp:social-link {"url":"https://paypal.me/imath/","service":"chain","className":"paypal-imath"} /-->
 		</ul>
@@ -32,7 +32,7 @@
 		printf(
 			/* Translators: WordPress link. */
 			esc_html__( 'Fièrement propulsé par %s', 'ensemble' ),
-			'<a href="' . esc_url( __( 'https://fr.wordpress.org/', 'ensemble' ) ) . '" rel="nofollow">WordPress</a>'
+			'<a href="' . esc_url( __( 'https://retraceur.github.io/', 'ensemble' ) ) . '" rel="nofollow">Retraceur</a>'
 		);
 		?>
 		<span class="sep"> | </span>
