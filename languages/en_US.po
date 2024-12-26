@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ensemble\n"
 "Report-Msgid-Bugs-To: https://github.com/imath/ensemble/issues\n"
-"POT-Creation-Date: 2023-09-27T00:39:07+00:00\n"
-"PO-Revision-Date: 2023-09-27 02:40+0200\n"
+"POT-Creation-Date: 2024-12-26T12:43:18+00:00\n"
+"PO-Revision-Date: 2024-12-26 13:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -13,64 +13,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Domain: ensemble\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "Ensemble"
 msgstr "Ensemble"
 
 #. Description of the theme
+#: style.css
 msgid ""
 "Ensemble utilise les gabarits de bloc pour afficher les contenus d'un site "
-"WordPress."
-msgstr "Ensemble uses block templates to display a WordPress site content."
+"Retraceur."
+msgstr "Ensemble uses block templates to display a Retraceur site content."
 
 #. Author of the theme
+#: style.css
 msgid "imath"
 msgstr "imath"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions.php:285
+#: functions.php:281
 msgid ""
 "Poursuivre la lecture<span class=\"screen-reader-text\"> de \"%s\"</span>"
 msgstr "Read more<span class=\"screen-reader-text\"> of \"%s\"</span>"
 
-#: functions.php:381
+#: functions.php:377
 msgid "Signets"
 msgstr "Bookmarks"
 
-#: functions.php:382
+#: functions.php:378
 msgid "Articles"
 msgstr "Posts"
 
-#: functions.php:383
+#: functions.php:379
 msgid "Brèves"
 msgstr "Briefs"
 
 #. translators: %s is the post published date.
-#: functions.php:409
+#: functions.php:405
 msgid "Signet publié le %s"
 msgstr "Bookmark published on %s"
 
 #. translators: %s is the post published date.
-#: functions.php:411
+#: functions.php:407
 msgid "Brève publiée le %s"
 msgstr "Brief published on %s"
 
 #. translators: %d is the post ID.
-#: functions.php:439
+#: functions.php:435
 msgid "Signet #%d"
 msgstr "Bookmark #%d"
 
 #. translators: %d is the post ID.
-#: functions.php:441
+#: functions.php:437
 msgid "Brève #%d"
 msgstr "Brief #%d"
 
-#: functions.php:647
+#: functions.php:643
 msgid "S’abonner au flux de ce type de publication"
 msgstr "Subscribe to the feed for this type of publication"
+
+#: patterns/404.php
+msgctxt "Pattern title"
+msgid "404 Ensemble"
+msgstr "404 Ensemble"
 
 #: patterns/404.php:16
 msgid "Impasse dans le sous-sol des Invalides"
@@ -94,15 +102,30 @@ msgstr ""
 "The site did not find what you are looking for. Use the form below to "
 "resubmit a different text."
 
+#: patterns/breve-header-three.php
+msgctxt "Pattern title"
+msgid "Entête de brève (h3)"
+msgstr "Status header (h3)"
+
 #: patterns/breve-header-three.php:15
 msgctxt "\"Published on\" date separator"
 msgid "Publiée le"
 msgstr "Published on"
 
+#: patterns/breve-header-two.php
+msgctxt "Pattern title"
+msgid "Entête de brève (h2)"
+msgstr "Status header (h2)"
+
 #: patterns/breve-header-two.php:15
 msgctxt "\"Published on\" date separator"
 msgid "Brève publiée le"
 msgstr "Published on"
+
+#: patterns/entry-footer.php
+msgctxt "Pattern title"
+msgid "Entry Footer Ensemble"
+msgstr "Entry Footer Ensemble"
 
 #: patterns/entry-footer.php:15
 msgctxt "\"Published in\" catgory separator"
@@ -114,6 +137,11 @@ msgctxt "\"Tagged\" tags separator"
 msgid "étiquetté"
 msgstr "tagged"
 
+#: patterns/entry-header.php
+msgctxt "Pattern title"
+msgid "Entry Header Ensemble"
+msgstr "Entry Header Ensemble"
+
 #: patterns/entry-header.php:15 patterns/signet-header-three.php:15
 msgctxt "\"Published on\" date separator"
 msgid "Publié le"
@@ -124,19 +152,29 @@ msgctxt "\"By\" Author separator"
 msgid "par"
 msgstr "by"
 
-#. Translators: WordPress link.
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Footer Ensemble"
+msgstr "Footer Ensemble"
+
+#. Translators: Retraceur link.
 #: patterns/footer.php:34
 msgid "Fièrement propulsé par %s"
 msgstr "Proudly powered by %s"
 
 #: patterns/footer.php:35
-msgid "https://fr.wordpress.org/"
-msgstr "https://wordpress.org/"
+msgid "https://retraceur.github.io/"
+msgstr "https://retraceur.github.io/"
 
 #. translators: 1: Theme name, 2: Theme author.
 #: patterns/footer.php:42
 msgid "Thème: %1$s de %2$s."
 msgstr "Theme: %1$s from %2$s."
+
+#: patterns/pagination.php
+msgctxt "Pattern title"
+msgid "Pagination"
+msgstr "Pagination"
 
 #: patterns/pagination.php:16
 msgid "Publications plus récentes"
@@ -145,6 +183,11 @@ msgstr "Next posts"
 #: patterns/pagination.php:17
 msgid "Publications plus anciennes"
 msgstr "Previous posts"
+
+#: patterns/search-form.php
+msgctxt "Pattern title"
+msgid "Search form Ensemble"
+msgstr "Search form Ensemble"
 
 #: patterns/search-form.php:12
 msgctxt "label"
@@ -160,14 +203,34 @@ msgstr "Text to search for..."
 msgid "Ok"
 msgstr "Ok"
 
+#: patterns/search-no-results.php
+msgctxt "Pattern title"
+msgid "Search no-results Ensemble"
+msgstr "Search no-results Ensemble"
+
 #: patterns/search-no-results.php:13
 msgid "Ouch, rien par ici !"
 msgstr "Ouch, nothing there!"
+
+#: patterns/signet-header-three.php
+msgctxt "Pattern title"
+msgid "Entête de signet (h3)"
+msgstr "Link header (h3)"
+
+#: patterns/signet-header-two.php
+msgctxt "Pattern title"
+msgid "Entête de signet (h2)"
+msgstr "Link header (h2)"
 
 #: patterns/signet-header-two.php:15
 msgctxt "\"Published on\" date separator"
 msgid "Signet publié le"
 msgstr "Bookmark published on"
+
+#: patterns/site-header-search.php
+msgctxt "Pattern title"
+msgid "Site Header search"
+msgstr "Site Header search"
 
 #: assets/blocks/signet/index.js:1
 msgid "Signet"
@@ -182,7 +245,7 @@ msgstr ""
 
 #: assets/blocks/signet/index.js:1
 msgid "Insérer l’URL du signet pour obtenir son aperçu…"
-msgstr "Insert bookmark URL to preview.."
+msgstr "Insert bookmark URL to preview…"
 
 #: assets/blocks/signet/index.js:1
 msgid "Intégrer"
@@ -231,3 +294,106 @@ msgstr "Bookmark"
 msgctxt "block description"
 msgid "Embarque une visualisation du lien"
 msgstr "Provides a link preview"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Principale"
+msgstr "Main"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondaire"
+msgstr "Secondary"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Tertiaire"
+msgstr "Tertiary"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Bleu très foncé"
+msgstr "Very dark blue"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gris très léger"
+msgstr "Very soft grey"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gris très foncé"
+msgstr "Very dark grey"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cyan très foncé"
+msgstr "Very dark cyan"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Noto Serif"
+msgstr "Noto Serif"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Ultra petite"
+msgstr "Ultra small"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Petite"
+msgstr "Small"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Moyenne"
+msgstr "Regular"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Grande"
+msgstr "Big"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Très grande"
+msgstr "Very big"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Ultra grande"
+msgstr "Ultra big"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page à propos"
+msgstr "About page"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page de recherche"
+msgstr "Search page"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page sans titre"
+msgstr "No title page"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Formulaire de contact"
+msgstr "Contact form"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Entête de page"
+msgstr "Page header"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Pied de page"
+msgstr "Page footer"
+
+#~ msgid "https://fr.wordpress.org/"
+#~ msgstr "https://wordpress.org/"
