@@ -1,6 +1,6 @@
 # Ensemble
 
-Ensemble est un thème pour Retraceur composé de gabarits de blocs.
+Ensemble est un thème pour [Retraceur](https://retraceur.github.io/) composé de gabarits de blocs.
 
 ## Configuration requise
 
