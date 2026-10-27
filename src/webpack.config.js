@@ -10,7 +10,6 @@ module.exports = {
 	...{
         entry: {
             'image-a-la-une/index': './src/image-a-la-une/index.js',
-			'signet/index': './src/signet/index.js',
 			'post-format-template/index': './src/post-format-template/index.js',
         },
 		output: {

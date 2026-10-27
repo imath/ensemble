@@ -143,40 +143,6 @@ function ensemble_register_block_image_a_la_une() {
 add_action( 'init', 'ensemble_register_block_image_a_la_une' );
 
 /**
- * Registers the `ensemble/signet` block on the server.
- *
- * @since 1.0.0
- */
-function ensemble_register_block_signet() {
-	$block_dir   = get_theme_file_path( '/assets/blocks/signet' );
-	$script_data = require_once trailingslashit( $block_dir ) . 'index.asset.php';
-
-	wp_register_script(
-		'ensemble-signet-script',
-		get_theme_file_uri( '/assets/blocks/signet/index.js' ),
-		$script_data['dependencies'],
-		$script_data['version'],
-		true
-	);
-
-	wp_register_style(
-		'ensemble-signet-style',
-		get_theme_file_uri( '/assets/blocks/signet/style-index.css' ),
-		array(),
-		$script_data['version']
-	);
-
-	register_block_type_from_metadata(
-		$block_dir,
-		array(
-			'editor_script' => 'ensemble-signet-script',
-			'style'         => 'ensemble-signet-style',
-		)
-	);
-}
-add_action( 'init', 'ensemble_register_block_signet' );
-
-/**
  * Renders the `ensemble/post-format-template` block on the server.
  *
  * @since 1.1.0
