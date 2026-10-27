@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/retraceur/ressources/refs/heads/main/schemas/theme.json",
-	"version": 2,
+	"version": 3,
 	"settings": {
 		"color": {
 			"palette": [
