@@ -4,7 +4,7 @@
 	<!-- wp:query -->
 	<div class="wp-block-query">
 		<!-- wp:post-template -->
-			<!-- wp:ensemble/post-format-template {"format":"standard"} -->
+			<!-- wp:post-format-part {"include":"standard"} -->
 				<!-- wp:group {"tagName":"section","className":"entry-header","layout":{"inherit":true}} -->
 				<section class="wp-block-group entry-header">
 					<!-- wp:post-title {"isLink":true,"level":2} /-->
@@ -28,8 +28,8 @@
 				<!-- wp:spacer {"height":"20px"} -->
 				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
-			<!-- /wp:ensemble/post-format-template -->
-			<!-- wp:ensemble/post-format-template {"format":"link"} -->
+			<!-- /wp:post-format-part -->
+			<!-- wp:post-format-part {"include":"link"} -->
 				<!-- wp:group {"tagName":"section","className":"entry-header signet-header","layout":{"inherit":true}} -->
 				<section class="wp-block-group entry-header signet-header">
 					<!-- wp:pattern {"slug":"ensemble/signet-header-two"} /-->
@@ -46,8 +46,8 @@
 				<!-- wp:spacer {"height":"20px"} -->
 				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
-			<!-- /wp:ensemble/post-format-template -->
-			<!-- wp:ensemble/post-format-template {"format":"status"} -->
+			<!-- /wp:post-format-part -->
+			<!-- wp:post-format-part {"include":"status"} -->
 				<!-- wp:group {"tagName":"section","className":"entry-header breve-header","layout":{"inherit":true}} -->
 				<section class="wp-block-group entry-header breve-header">
 					<!-- wp:pattern {"slug":"ensemble/breve-header-two"} /-->
@@ -64,7 +64,7 @@
 				<!-- wp:spacer {"height":"20px"} -->
 				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
-			<!-- /wp:ensemble/post-format-template -->
+			<!-- /wp:post-format-part -->
 		<!-- /wp:post-template -->
 		<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
 			<!-- wp:pattern {"slug":"ensemble/pagination"} /-->
